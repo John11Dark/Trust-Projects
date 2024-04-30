@@ -1,7 +1,5 @@
 /* ? Third parties   */
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&family=Quicksand:wght@300;400;500;600;700&family=Rubik:wght@300;400;600;700;800&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Noto+Color+Emoji&family=Pacifico&family=Palanquin+Dark:wght@400;500;600;700&display=swap");
-
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@300..700&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
 /* ? Custom Props */
 :root {
   /* * Colors  */
@@ -26,9 +24,9 @@
   --secondary-color-opacity-20: #a0a09620;
   --secondary-color-opacity-10: #a0a09610;
   /* * Fonts */
-  --primary-font: "Quicksand", sans-serif;
-  --secondary-font: "Rubik", sans-serif;
-  --tertiary-font: "Poppins", sans-serif;
+  --primary-font: "Work Sans", sans-serif;
+  --secondary-font: "Quicksand", sans-serif;
+  --tertiary-font: "Quicksand", sans-serif;
 
   /* * Sizes */
   --font-link: calc(0.5vw + 0.5vh + 0.5rem);
@@ -328,9 +326,10 @@ abbr {
 }
 
 ::selection,
-::-moz-selection {
-  background-color: var(--primary-color);
-  color: var(--secondary-color);
+::-moz-selection,
+::-webkit-search-results-decoration {
+  background-color: var(--primary-color) !important;
+  color: var(--secondary-color) !important;
   text-shadow: none;
 }
 
@@ -570,10 +569,11 @@ header[isInteracting="true"] {
 }
 
 .links-list {
+  display: flex;
   align-items: center;
   justify-content: flex-end;
   align-self: flex-end;
-  gap: var(--spacing-300);
+  gap: var(--spacing-500);
 }
 
 .nav-button {
@@ -645,7 +645,7 @@ footer {
   width: 100dvw;
   background-color: var(--primary-color);
   position: relative;
-  margin-top: 50vh;
+  margin-top: 60vh;
 }
 
 .footer-effect-image {
@@ -713,6 +713,19 @@ address {
 /* hide all aria-hidden="false" inside contact-views*/
 .contact-views *[aria-hidden="true"] {
   display: none;
+}
+
+.contact-title {
+  font-size: var(--font-600);
+  font-weight: 800;
+  color: var(--primary-color-light);
+}
+
+.contact-description {
+  font-size: var(--font-100);
+  font-weight: 300;
+  color: var(--primary-color-light);
+  opacity: 0.8;
 }
 
 /* ?  Screens */
