@@ -345,34 +345,19 @@ body[single-page-layout="true"]::before {
 }
 
 /*  */
-.cos-section {
-  grid-column: 2;
-}
-
-.cos-effect {
-  z-index: -10;
-  opacity: 0.4 !important;
-}
-
-.cos-illustration {
-  max-width: 100%;
-  max-height: 100%;
-  margin: 1em auto;
-  object-fit: contain;
-}
-
-form {
-  width: max(100%, 37.5vw);
-  height: max(100%, 47.5vh);
-  min-height: 47.5vh;
+.contact-from {
   display: grid;
-  grid-template-columns: 45% 45%;
-  grid-template-rows: 15% 15% 40%;
-  gap: var(--spacing-300) var(--spacing-400);
-  margin: 0 auto;
   place-content: center;
   place-items: center;
   place-self: center;
+}
+
+.field-group {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--spacing-100);
 }
 
 .field-container {
@@ -380,11 +365,12 @@ form {
   min-width: 100%;
   max-width: 100%;
   width: 100%;
-  min-height: 100%;
-  max-height: 100%;
+  min-height: 60px;
+  max-height: 60px;
   height: 100%;
   transition: all 0.5s ease;
   display: flex;
+  margin-block: var(--spacing-100);
 }
 
 .field-label {
@@ -408,31 +394,23 @@ form {
   width: 100%;
   height: 100%;
   padding: var(--spacing-400);
-  margin: 0 !important;
+  border: 0.125rem solid transparent;
 }
 
-.list-filed {
-  padding: var(--spacing-200) var(--spacing-400);
-  min-height: 2.25em;
-  max-height: 100%;
+.email {
+  max-height: 60px;
+  min-height: 60px;
+}
+
+.message {
+  margin-top: var(--spacing-200);
+}
+.message-field {
+  min-height: 150px;
+  max-height: 150px;
   height: 100%;
 }
-
-.Email {
-  grid-row: 2;
-  grid-column: 1 / span 2;
-  width: 100% !important;
-  height: 100% !important;
-}
-
-.Message {
-  grid-row: 3;
-  grid-column: 1 / span 2;
-  width: 100% !important;
-  height: 100% !important;
-}
-
-.Message .field-label {
+.message .field-label {
   top: 20px;
   transform: translateY(0);
 }
@@ -440,8 +418,8 @@ form {
 .input-field:focus-within,
 .input-field:focus-visible,
 .input-field:focus {
-  border: 0.125rem solid #b6824398;
-  box-shadow: 0.5rem 0.5rem 1rem -0.5rem #694e328e;
+  border: 0.125rem solid var(--primary-color-opacity-80);
+  box-shadow: 0.5rem 0.5rem 1rem -0.5rem var(--primary-color-opacity-50);
 }
 
 .field-container:focus-within .field-label,
@@ -450,7 +428,8 @@ form {
 .drop-down-label,
 .field-label[hasContent="true"] {
   top: 0;
-  transform: translateY(-50%) scale(0.9);
+  transform: translateY(-40%) scale(0.9);
+  color: var(--secondary-color);
 }
 
 .submitBtn {
@@ -470,237 +449,6 @@ form {
   max-width: var(--icon-400);
   max-height: var(--icon-400);
 }
-.cos-items-controller[visible="true"] {
-  display: grid;
-}
-
-.cos-items-controller[visible="false"] {
-  display: none;
-}
-
-.data-picker {
-  position: relative;
-  gap: var(--spacing-300);
-  border-radius: var(--radius-200);
-  background-color: var(--primary-color-dark);
-  color: var(--surface-grayish);
-  min-width: 100%;
-  min-height: 100%;
-  width: 100%;
-  height: 100%;
-  padding: var(--spacing-400);
-  cursor: pointer;
-}
-
-.drop-down-icon {
-  z-index: 10;
-  fill: var(--accent-color);
-  position: absolute;
-  right: 0.5rem;
-  top: 1rem;
-}
-
-.selected-date {
-  color: var(--surface-grayish);
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  left: 20px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.5s ease;
-  z-index: 10;
-}
-/* date picker */
-.cos-meeting-picker {
-  grid-template-columns: 45% 45%;
-  grid-template-rows: 15% 15% 15% 40%;
-}
-
-.meeting-email {
-  grid-row: 3;
-  grid-column: 1 / span 2;
-  width: 100% !important;
-  height: 100% !important;
-}
-
-.note .field-label {
-  top: 20px;
-  transform: translateY(0);
-}
-.note {
-  grid-row: 4;
-  grid-column: 1 / span 2;
-  width: 100% !important;
-  height: 100% !important;
-}
-
-.phone-number {
-  position: relative;
-}
-.countries-code-list {
-  -moz-appearance: none;
-  -webkit-appearance: none;
-  appearance: none;
-  cursor: pointer;
-  position: absolute;
-  border-radius: var(--radius-200) 0 0 var(--radius-200);
-  left: 0;
-  top: 0;
-  z-index: 2;
-  height: 100%;
-  min-width: 50px !important;
-  width: 100px !important;
-  background-color: var(--opacity-dark-100);
-  font-size: 16px;
-  color: var(--surface-grayish);
-  padding: 0 0 0 var(--spacing-200);
-}
-.phone-number-filed {
-  min-width: 60%;
-  width: 68%;
-  border-radius: 0 var(--radius-200) var(--radius-200) 0;
-  place-self: flex-end !important;
-  transform: translateX(100px);
-}
-
-/* ? Date Picker */
-.date-picker-container {
-  position: absolute;
-  overflow: hidden;
-  overflow-y: scroll;
-  left: 0;
-  top: 110%;
-  z-index: 10;
-  background-color: var(--primary-color-dark);
-  min-height: 30vh;
-  max-height: 50vh;
-  width: 100%;
-  border-radius: var(--radius-200);
-  display: grid;
-  grid-template-rows: 10% 70% 10%;
-  text-align: center;
-  place-content: center;
-  place-items: center;
-  place-self: center;
-  gap: var(--spacing-100);
-  padding: 0 var(--spacing-200);
-}
-
-.date-picker-container::-webkit-scrollbar {
-  display: none;
-}
-
-.date-picker-container[visible="false"] {
-  display: none;
-}
-.date-picker-container[visible="true"] {
-  display: grid;
-}
-
-.month {
-  grid-row: 1;
-  justify-content: space-between;
-  width: 100%;
-  align-items: center;
-  padding-top: var(--spacing-400);
-}
-
-.months-list-buttons {
-  padding: 0 0 0 0;
-  height: var(--icon-300);
-  width: var(--icon-300);
-  display: grid;
-  place-content: space-around;
-  place-items: center;
-  place-self: center;
-  border-radius: var(--radius-circle);
-}
-
-.date-picker-month-icon {
-  fill: var(--primary-color);
-  height: var(--icon-300);
-  width: var(--icon-300);
-  border-radius: var(--radius-circle);
-  transition: var(--transition-5-ease);
-}
-
-.date-picker-month-icon.left {
-  transform: rotate(90deg);
-}
-
-.date-picker-month-icon.right {
-  transform: rotate(-90deg);
-}
-
-.days-container {
-  grid-row: 2;
-}
-
-.days-grid-repeat {
-  display: grid;
-  grid-template-columns: repeat(7, 1fr);
-  max-width: 95%;
-  height: 100%;
-  gap: var(--spacing-300) var(--spacing-100);
-  margin-block: var(--spacing-300);
-}
-
-.day-names {
-  grid-row: 3;
-}
-
-.date-picker-icon {
-  display: grid;
-  place-content: center;
-  place-items: center;
-  place-self: center;
-  transition: var(--transition-5-ease);
-  color: var(--primary-color-light);
-  font-size: var(--font-100);
-  width: var(--icon-500);
-  height: var(--icon-500);
-  border-radius: var(--radius-200);
-}
-
-.day-name {
-  font-weight: 900;
-  opacity: 0.8;
-}
-
-.date-picker-icon[attr="busy"] {
-  color: #b83d3d;
-}
-
-.day[disabled="true"] {
-  opacity: 0.3;
-  pointer-events: none;
-}
-
-.day[selected="true"],
-.day[currentDay="true"] {
-  ----current-color: var(--secondary-color-opacity-100);
-  box-shadow: 0 0 15px 0 var(----current-color);
-  color: var(--secondary-color);
-  font-weight: 500;
-  background-color: var(----current-color);
-}
-.day[currentDay="true"] {
-  ----current-color: var(--primary-color-opacity-100);
-  color: var(--primary-color);
-}
-
-.date-picker-info {
-  width: 100%;
-  justify-content: space-between;
-  grid-row: 3;
-}
-
-.date-picker-button {
-  padding: var(--spacing-100) var(--spacing-400);
-  font-weight: 500;
-}
-
 @media (max-width: 65em) {
   .contact-section {
     display: flex;
