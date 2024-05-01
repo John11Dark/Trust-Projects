@@ -64,9 +64,10 @@ const goToTopButton = document.querySelector("[go-top-button]");
 const navButton = document.querySelector("#navButton");
 const navLinks = document.querySelectorAll(".link");
 const contactForm = document.querySelector("#form");
-
+const contactPageButton = document.querySelector("#contact-view");
+const contactPage = document.querySelector("#contactPage");
 const contactFormButton = document.querySelector("#showContactForm");
-
+const closeContactPageButton = document.querySelector("#closeContactPage");
 const abbreviationsList = document.querySelectorAll("abbr");
 
 const messageInputField = document.querySelector("#message");
@@ -251,5 +252,21 @@ if (contactFormButton) {
     contactForm.setAttribute("visible", !visible);
     cosIllustrations.setAttribute("visible", visible);
     appointmentPickerForm.setAttribute("visible", false);
+  });
+}
+
+if (contactPageButton) {
+  contactPageButton.addEventListener("pointerdown", (e) => {
+    e.preventDefault();
+    const expanded = contactPage.getAttribute("aria-expanded") === "true";
+    contactPage.setAttribute("aria-expanded", !expanded);
+    body.setAttribute("isObserving", expanded);
+  });
+}
+
+if (closeContactPageButton) {
+  closeContactPageButton.addEventListener("pointerdown", () => {
+    contactPage.setAttribute("aria-expanded", false);
+    body.setAttribute("isObserving", true);
   });
 }
