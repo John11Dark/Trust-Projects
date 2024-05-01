@@ -139,11 +139,11 @@
       <nav class="main-menu | flex" id="mainMenu" aria-label="navigation links" aria-expanded="false" visible="false">
 
         <ul role="list" class="links-list">
-          <li class="contents"><a href="./Pages/projects.html" class="link" active="false"
+          <li class="contents"><a href="./pages/projects.html" class="link" active="false"
               title="Projects page">Projects
             </a>
           </li>
-          <li class="contents"><a href="./pages/contact.html" class="link" active="false"
+          <li class="contents"><a id="contact-view" aria-expanded="false" href="" class="link" active="false"
               title="Contact page">Contact</a>
           </li>
         </ul>
@@ -274,7 +274,45 @@
 
         </article>
       </section>
+
     </footer>
+
+    <section id="contactPage" aria-expanded="false" visibility="none">
+      <div class="contact-page | flex">
+        <div class="contact-page-content">
+          <h2 class="contact-page-title">Contact Us</h2>
+          <p class="contact-page-description">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptates. Quisquam, voluptates. Lorem
+            ipsum dolor sit, amet consectetur adipisicing elit. Fugit impedit blanditiis accusamus nostrum earum illum
+            in
+            molestias quis consectetur molestiae, possimus sint recusandae quasi deleniti totam. Maxime laboriosam
+            officiis placeat.
+          </p>
+        </div>
+        <div class="contact-page-form">
+          <form id="contactForm" class="contact-form" method="post" aria-hidden="false">
+            <div class="field-group">
+              <div class="field-container">
+                <label for="name" class="field-label">Name</label>
+                <input type="text" id="name" class="input-field" required aria-label="Your name" aria-required="true"
+                  autocomplete="name" pattern="[a-zA-Z]{2,}" minlength="2" maxlength="50" />
+              </div>
+              <div class="field-container">
+                <label for="number" class="field-label">Number</label>
+                <input type="tel" id="number" class="input-field" required aria-label="Your Number" aria-required="true"
+                  autocomplete="tel" pattern="^\+(?:[0-9] ?){6,14}[0-9]$" minlength="8" maxlength="8" />
+              </div>
+            </div>
+            <div class="field-container">
+              <label for="email" class="field-label">Email</label>
+              <input type="email" autocomplete="email" autocorrect="off" spellcheck="false" id="email"
+                class="input-field | email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                aria-label="Your Email" aria-required="true" minlength="5" maxlength="50" />
+            </div>
+            <div class="field-container | message">
+              <label for="message" class="field-label">Message</label>
+              <textarea id="message" class="input
+    </section>
   </body>
 
 </html>
