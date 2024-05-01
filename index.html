@@ -213,44 +213,47 @@
 
 
         <article class="contact-views">
-          <form id="form" class="contact-form" method="post" aria-hidden="false">
-            <div class="field-group">
+          <section class="content-views-section | flex">
+            <form id="form" class="contact-form" method="post" aria-hidden="false">
+              <div class="field-group">
 
-              <div class="field-container">
-                <label for="name" class="field-label">Name</label>
-                <input type="text" id="name" class="input-field" required aria-label="Your name" aria-required="true"
-                  autocomplete="name" pattern="[a-zA-Z]{2,}" minlength="2" maxlength="50" />
+                <div class="field-container">
+                  <label for="name" class="field-label">Name</label>
+                  <input type="text" id="name" class="input-field" required aria-label="Your name" aria-required="true"
+                    autocomplete="name" pattern="[a-zA-Z]{2,}" minlength="2" maxlength="50" />
+                </div>
+
+                <div class="field-container">
+                  <label for="number" class="field-label">Number</label>
+                  <input type="tel" id="number" class="input-field" required aria-label="Your Number"
+                    aria-required="true" autocomplete="tel" pattern="^\+(?:[0-9] ?){6,14}[0-9]$" minlength="8"
+                    maxlength="8" />
+                </div>
               </div>
 
               <div class="field-container">
-                <label for="number" class="field-label">Number</label>
-                <input type="tel" id="number" class="input-field" required aria-label="Your Number" aria-required="true"
-                  autocomplete="tel" pattern="^\+(?:[0-9] ?){6,14}[0-9]$" minlength="8" maxlength="8" />
+                <label for="email" class="field-label">Email</label>
+                <input type="email" autocomplete="email" autocorrect="off" spellcheck="false" id="email"
+                  class="input-field | email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                  aria-label="Your Email" aria-required="true" minlength="5" maxlength="50" />
               </div>
-            </div>
 
-            <div class="field-container">
-              <label for="email" class="field-label">Email</label>
-              <input type="email" autocomplete="email" autocorrect="off" spellcheck="false" id="email"
-                class="input-field | email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
-                aria-label="Your Email" aria-required="true" minlength="5" maxlength="50" />
-            </div>
-
-            <div class="field-container | message">
-              <label for="message" class="field-label">Message</label>
-              <textarea id="message" class="input-field | message-field" required aria-label="Your Message"
-                aria-required="true"></textarea>
-            </div>
-          </form>
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3232.4340058178745!2d14.481360426481508!3d35.88738482252146!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x130e5aa55291021b%3A0x26780906f0dd1871!2sTop%20Choice%20Electronics%20%26%20Appliances!5e0!3m2!1sen!2smt!4v1714440537221!5m2!1sen!2smt"
-            width="400" height="300" class="map" allowfullscreen="" loading="lazy" id="map" aria-hidden="true"
-            referrerpolicy="no-referrer-when-downgrade"></iframe>
-          <div class="map-buttons | flex">
-            <button class="switch" title="send email" aria-label="send email" aria-controls="form" aria-expanded="true"
-              aria-haspopup="true" active="true" />
-            <button class="switch" title="view map" aria-label="view map" aria-controls="map" aria-expanded="false"
-              aria-haspopup="true" active="false" />
+              <div class="field-container | message">
+                <label for="message" class="field-label">Message</label>
+                <textarea id="message" class="input-field | message-field" required aria-label="Your Message"
+                  aria-required="true"></textarea>
+              </div>
+            </form>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3232.4340058178745!2d14.481360426481508!3d35.88738482252146!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x130e5aa55291021b%3A0x26780906f0dd1871!2sTop%20Choice%20Electronics%20%26%20Appliances!5e0!3m2!1sen!2smt!4v1714440537221!5m2!1sen!2smt"
+              width="400" height="300" class="map" allowfullscreen="" loading="lazy" id="map" aria-hidden="true"
+              referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </section>
+          <div class="contact-buttons | flex">
+            <button type="button" class="switch" title="send email" aria-label="send email" aria-controls="form"
+              aria-expanded="true" aria-haspopup="true" active="true" />
+            <button type="button" class="switch" title="view map" aria-label="view map" aria-controls="map"
+              aria-expanded="false" aria-haspopup="true" active="false" />
           </div>
 
         </article>
