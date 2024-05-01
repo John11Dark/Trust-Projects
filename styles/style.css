@@ -646,7 +646,7 @@ footer {
   width: 100dvw;
   background-color: var(--primary-color);
   position: relative;
-  margin-top: 60vh;
+  margin-top: 80vh;
 }
 
 .footer-effect-image {
@@ -766,6 +766,97 @@ address {
 .switch[active="false"] {
   width: 10px;
   opacity: 0.9;
+}
+
+.about-content {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: var(--spacing-600);
+}
+
+.about-description {
+  max-width: 60ch;
+}
+
+.site {
+  width: 90%;
+  height: 90%;
+  display: grid;
+  place-content: center;
+  place-items: center;
+  place-self: center;
+  border-radius: var(--radius-300);
+  overflow: hidden;
+  cursor: pointer;
+  margin: 0 auto;
+  position: relative;
+  transition: all 0.5s ease;
+}
+
+.site:hover {
+  transform: scale(1.01);
+  box-shadow: var(--box-shadow-600);
+}
+
+.site:hover .site-image {
+  opacity: 0.5;
+}
+
+.site:hover .site-name {
+  opacity: 0;
+}
+
+.site-image {
+  width: 90vw;
+  height: 90vh;
+  object-fit: cover;
+  border-radius: var(--radius-300);
+  opacity: 0.8;
+  transition: all 0.5s ease;
+}
+.site-name {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  text-shadow: 0 0 0.5em #11100e;
+  font-size: var(--font-600);
+  font-weight: 300;
+  transition: all 0.5s ease;
+  pointer-events: none;
+}
+
+.site-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  font-size: var(--font-600);
+  font-weight: 300;
+  transition: all 0.5s ease;
+  width: 20rem;
+  background-color: var(--primary-color);
+  color: var(--primary-color-light);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.site:hover .site-button {
+  opacity: 0.9;
+  pointer-events: all;
+}
+
+.height {
+  min-height: 200vh;
+}
+
+.site-2 {
+  position: relative;
+  width: 400px;
+  height: 400px;
 }
 /* ?  Screens */
 /* * Laptops and small size monitors*/
