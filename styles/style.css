@@ -291,6 +291,7 @@ button {
   font-weight: 600;
   background-color: transparent;
   text-transform: capitalize;
+  cursor: pointer;
 }
 
 .primary-button {
@@ -699,11 +700,25 @@ address {
 }
 
 .contact-views {
+  display: grid;
+  place-content: flex-end;
+  place-items: center;
+  place-self: center;
+  gap: var(--spacing-300);
+  max-height: 40vh;
+}
+
+#form {
+  overflow: hidden;
+  max-width: 500px;
+  max-height: 400px;
+  width: 500px;
+  height: 350px;
 }
 
 .map {
-  width: 450px;
-  height: 300px;
+  width: 500px;
+  height: 350px;
   border-radius: var(--radius-300);
   overflow: hidden;
   box-shadow: var(--box-shadow-500);
@@ -711,7 +726,7 @@ address {
 }
 
 /* hide all aria-hidden="false" inside contact-views*/
-.contact-views *[aria-hidden="true"] {
+.contact-views [aria-hidden="true"] {
   display: none;
 }
 
@@ -728,6 +743,30 @@ address {
   opacity: 0.8;
 }
 
+.contact-buttons {
+  display: flex;
+  gap: var(--spacing-300);
+  justify-content: center;
+  align-items: center;
+  place-content: center;
+  place-items: center;
+  place-self: center;
+}
+
+.switch {
+  background-color: var(--primary-color-light);
+  width: 30px;
+  height: 10px;
+  border-radius: var(--radius-200);
+  padding: 0;
+  margin: 0;
+  transition: all 0.5s ease;
+}
+
+.switch[active="false"] {
+  width: 10px;
+  opacity: 0.9;
+}
 /* ?  Screens */
 /* * Laptops and small size monitors*/
 
@@ -804,6 +843,20 @@ address {
 
   .main-menu[visible="true"] {
     display: grid;
+  }
+  .map,
+  form {
+    width: 350px;
+    max-width: 350px;
+  }
+  footer {
+    height: 70vh;
+  }
+  .footer-section {
+    display: grid;
+    place-content: center;
+    place-items: center;
+    place-self: center;
   }
 }
 
