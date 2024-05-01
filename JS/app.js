@@ -72,6 +72,7 @@ const abbreviationsList = document.querySelectorAll("abbr");
 const messageInputField = document.querySelector("#message");
 const inputFields = document.querySelectorAll("input");
 
+const switchButtons = document.querySelectorAll(".switch");
 // ? * --> Functions
 
 function inputControls(inputField, fieldLabel) {
@@ -220,6 +221,27 @@ navButton.addEventListener("pointerdown", () => {
       }s`;
       link.style.animationDelay = `${index / 3 + 0.5}s`;
     }
+  });
+});
+
+switchButtons.forEach((button) => {
+  button.addEventListener("pointerdown", () => {
+    const controls = button.getAttribute("aria-controls");
+    const target = document.querySelector(`#${controls}`);
+    button.setAttribute("active", true);
+    target.setAttribute("aria-expanded", true);
+    target.setAttribute("aria-hidden", false);
+
+    switchButtons.forEach((switchButton) => {
+      if (switchButton !== button) {
+        switchButton.setAttribute("active", false);
+        const controls = switchButton.getAttribute("aria-controls");
+        const target = document.querySelector(`#${controls}`);
+        target.setAttribute("aria-expanded", false);
+        target.setAttribute("aria-hidden", true);
+        switchButton.setAttribute("visible", false);
+      }
+    });
   });
 });
 
