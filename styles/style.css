@@ -1057,3 +1057,26 @@ address {
     scroll-behavior: auto !important;
   }
 }
+
+body,
+main {
+  display: grid;
+  place-content: center;
+  place-items: center;
+  place-self: center;
+  gap: var(--spacing-300);
+  padding: var(--spacing-500);
+  text-align: center;
+  height: 100vh;
+}
+
+article {
+  display: grid;
+  place-content: center;
+  place-items: center;
+  place-self: center;
+  height: 100vh;
+  gap: var(--spacing-300);
+  padding: var(--spacing-500);
+  text-align: center;
+}
