@@ -395,6 +395,12 @@ keyword[attr="emoji"] {
   align-content: center;
 }
 
+.center {
+  place-content: center;
+  place-items: center;
+  place-self: center;
+}
+
 .space-between {
   justify-content: space-between;
 }
