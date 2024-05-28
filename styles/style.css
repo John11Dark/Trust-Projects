@@ -1,5 +1,7 @@
 /* ? Third parties   */
-@import url("https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@300..700&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&family=Quicksand:wght@300;400;500;600;700&family=Rubik:wght@300;400;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Noto+Color+Emoji&family=Pacifico&family=Palanquin+Dark:wght@400;500;600;700&display=swap");
+
 /* ? Custom Props */
 :root {
   /* * Colors  */
@@ -24,9 +26,9 @@
   --secondary-color-opacity-20: #a0a09620;
   --secondary-color-opacity-10: #a0a09610;
   /* * Fonts */
-  --primary-font: "Work Sans", sans-serif;
-  --secondary-font: "Quicksand", sans-serif;
-  --tertiary-font: "Quicksand", sans-serif;
+  --primary-font: "Quicksand", sans-serif;
+  --secondary-font: "Rubik", sans-serif;
+  --tertiary-font: "Poppins", sans-serif;
 
   /* * Sizes */
   --font-link: calc(0.5vw + 0.5vh + 0.5rem);
@@ -327,10 +329,9 @@ abbr {
 }
 
 ::selection,
-::-moz-selection,
-::-webkit-search-results-decoration {
-  background-color: var(--primary-color) !important;
-  color: var(--secondary-color) !important;
+::-moz-selection {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
   text-shadow: none;
 }
 
@@ -392,6 +393,52 @@ keyword[attr="emoji"] {
   display: flex;
   align-items: center;
   align-content: center;
+}
+
+.spacing-100 {
+  gap: var(--spacing-100);
+}
+
+.spacing-200 {
+  gap: var(--spacing-200);
+}
+
+.spacing-300 {
+  gap: var(--spacing-300);
+}
+.spacing-400 {
+  gap: var(--spacing-400);
+}
+.spacing-500 {
+  gap: var(--spacing-500);
+}
+.spacing-600 {
+  gap: var(--spacing-600);
+}
+.spacing-700 {
+  gap: var(--spacing-700);
+}
+
+.max-width-40 {
+  max-width: 40%;
+}
+
+.color-primary {
+  fill: var(--primary-color);
+  stroke: var(--primary-color);
+  color: var(--primary-color);
+}
+
+.color-secondary {
+  fill: var(--secondary-color);
+  stroke: var(--secondary-color);
+  color: var(--secondary-color);
+}
+
+.color-light {
+  fill: var(--primary-color-light);
+  stroke: var(--primary-color-light);
+  color: var(--primary-color-light);
 }
 
 .contents {
@@ -570,11 +617,10 @@ header[isInteracting="true"] {
 }
 
 .links-list {
-  display: flex;
   align-items: center;
   justify-content: flex-end;
   align-self: flex-end;
-  gap: var(--spacing-500);
+  gap: var(--spacing-300);
 }
 
 .nav-button {
@@ -646,7 +692,7 @@ footer {
   width: 100dvw;
   background-color: var(--primary-color);
   position: relative;
-  margin-top: 80vh;
+  margin-top: 50vh;
 }
 
 .footer-effect-image {
@@ -710,15 +756,15 @@ address {
 
 #form {
   overflow: hidden;
-  max-width: 500px;
-  max-height: 400px;
-  width: 500px;
-  height: 350px;
+  max-width: 450px;
+  max-height: 300px;
+  width: 450px;
+  height: 300px;
 }
 
 .map {
-  width: 500px;
-  height: 350px;
+  width: 450px;
+  height: 300px;
   border-radius: var(--radius-300);
   overflow: hidden;
   box-shadow: var(--box-shadow-500);
@@ -726,7 +772,7 @@ address {
 }
 
 /* hide all aria-hidden="false" inside contact-views*/
-.contact-views [aria-hidden="true"] {
+.contact-views *[aria-hidden="true"] {
   display: none;
 }
 
@@ -765,99 +811,14 @@ address {
 
 .switch[active="false"] {
   width: 10px;
-  opacity: 0.9;
-}
-
-.about-content {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  padding: var(--spacing-600);
-}
-
-.about-description {
-  max-width: 60ch;
-}
-
-.site {
-  width: 90%;
-  height: 90%;
-  display: grid;
-  place-content: center;
-  place-items: center;
-  place-self: center;
-  border-radius: var(--radius-300);
-  overflow: hidden;
-  cursor: pointer;
-  margin: 0 auto;
-  position: relative;
-  transition: all 0.5s ease;
-}
-
-.site:hover {
-  transform: scale(1.01);
-  box-shadow: var(--box-shadow-600);
-}
-
-.site:hover .site-image {
-  opacity: 0.5;
-}
-
-.site:hover .site-name {
-  opacity: 0;
-}
-
-.site-image {
-  width: 90vw;
-  height: 90vh;
-  object-fit: cover;
-  border-radius: var(--radius-300);
   opacity: 0.8;
-  transition: all 0.5s ease;
-}
-.site-name {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  text-shadow: 0 0 0.5em #11100e;
-  font-size: var(--font-600);
-  font-weight: 300;
-  transition: all 0.5s ease;
-  pointer-events: none;
 }
 
-.site-button {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  font-size: var(--font-600);
-  font-weight: 300;
-  transition: all 0.5s ease;
-  width: 20rem;
-  background-color: var(--primary-color);
-  color: var(--primary-color-light);
-  opacity: 0;
-  pointer-events: none;
+.switch:hover {
+  opacity: 1;
+  transform: scaleX(1.1);
 }
 
-.site:hover .site-button {
-  opacity: 0.9;
-  pointer-events: all;
-}
-
-.height {
-  min-height: 200vh;
-}
-
-.site-2 {
-  position: relative;
-  width: 400px;
-  height: 400px;
-}
 /* ?  Screens */
 /* * Laptops and small size monitors*/
 
@@ -934,20 +895,6 @@ address {
 
   .main-menu[visible="true"] {
     display: grid;
-  }
-  .map,
-  form {
-    width: 350px;
-    max-width: 350px;
-  }
-  footer {
-    height: 70vh;
-  }
-  .footer-section {
-    display: grid;
-    place-content: center;
-    place-items: center;
-    place-self: center;
   }
 }
 
@@ -1056,27 +1003,4 @@ address {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
-}
-
-body,
-main {
-  display: grid;
-  place-content: center;
-  place-items: center;
-  place-self: center;
-  gap: var(--spacing-300);
-  padding: var(--spacing-500);
-  text-align: center;
-  height: 100vh;
-}
-
-article {
-  display: grid;
-  place-content: center;
-  place-items: center;
-  place-self: center;
-  height: 100vh;
-  gap: var(--spacing-300);
-  padding: var(--spacing-500);
-  text-align: center;
 }
