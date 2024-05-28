@@ -395,6 +395,44 @@ keyword[attr="emoji"] {
   align-content: center;
 }
 
+.space-between {
+  justify-content: space-between;
+}
+
+.padding-100 {
+  padding: var(--spacing-100);
+}
+
+.padding-200 {
+  padding: var(--spacing-200);
+}
+
+.padding-300 {
+  padding: var(--spacing-300);
+}
+
+.padding-400 {
+  padding: var(--spacing-400);
+}
+
+.padding-500 {
+  padding: var(--spacing-500);
+}
+.padding-600 {
+  padding: var(--spacing-600);
+}
+.padding-700 {
+  padding: var(--spacing-700);
+}
+
+.padding-800 {
+  padding: var(--spacing-800);
+}
+
+.padding-900 {
+  padding: var(--spacing-900);
+}
+
 .spacing-100 {
   gap: var(--spacing-100);
 }
@@ -417,6 +455,14 @@ keyword[attr="emoji"] {
 }
 .spacing-700 {
   gap: var(--spacing-700);
+}
+
+.spacing-800 {
+  gap: var(--spacing-800);
+}
+
+.spacing-900 {
+  gap: var(--spacing-900);
 }
 
 .max-width-40 {
