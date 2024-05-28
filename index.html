@@ -23,9 +23,9 @@
   <meta name="description" content="" />
 
   <!-- * Icon -->
-  <link media="(prefers-color-scheme: dark)" rel="shortcut icon" href="/assets/logo.png" type="image/x-icon" />
-  <link rel="apple-touch-startup-image" href="./assets/logo.png">
-  <link rel="apple-touch-icon" href="./assets/logo.png">
+  <link rel="shortcut icon" href="/assets/favicon.png" type="image/x-icon" />
+  <link rel="apple-touch-startup-image" href="./assets/favicon.png">
+  <link rel="apple-touch-icon" href="./assets/favicon.png">
 
   <!-- * Title -->
   <title>Home | Trust Projects</title>
@@ -59,6 +59,15 @@
     <datalist id="countriesCodeOptions">
     </datalist>
 
+    <!-- Link icon  -->
+    <svg class="svg-icon">
+      <symbol fill="none" id="LINK-ICON" preserveAspectRatio="xMinYMin meet" xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 30 28">
+        <path
+          d="M28 10L28 2M28 2H19.3333M28 2L16.4444 12.6667M12.1111 4.66667H8.93333C6.50644 4.66667 5.29299 4.66667 4.36604 5.10264C3.55067 5.48613 2.88776 6.09806 2.47231 6.8507C2 7.70635 2 8.82646 2 11.0667V19.6C2 21.8402 2 22.9603 2.47231 23.816C2.88776 24.5686 3.55067 25.1805 4.36604 25.564C5.29299 26 6.50644 26 8.93333 26H18.1778C20.6047 26 21.8181 26 22.7451 25.564C23.5604 25.1805 24.2234 24.5686 24.6388 23.816C25.1111 22.9603 25.1111 21.8402 25.1111 19.6V16.6667"
+          stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+      </symbol>
+    </svg>
     <!-- map icon  -->
     <svg class="svg-icon">
       <symbol fill="none" id="MAP-ICON" preserveAspectRatio="xMinYMin meet" xmlns="http://www.w3.org/2000/svg"
@@ -115,16 +124,295 @@
       </svg>
     </a>
 
-    <main>
-      <article>
-        <h1>Under going maintenance</h1>
-        <p>
-          This site is currently under going maintenance. <br>
-          Please check back later.
-          sorry for the inconvenience.
+    <!-- ? Page header -->
+    <header isIntersecting="false" class="primary-header | flex">
+
+      <!-- * Logo direct to home page -->
+
+      <img role="button" tabindex="2" title="Go to Home Page" aria-label="Clickable logo image" id="mainLogo"
+        class="main-logo | Logo | clickable" aria-hidden="true" src="./assets/logo.png" alt="Trust Projects logo"
+        href="./index.html" width="50" height="50" />
+
+      <!-- *  main menu button -->
+
+      <button aria-label="main menu button" aria-controls="mainMenu" class="nav-button | clickable" id="navButton"
+        isToggled="false" title="open main menu" type="button">
+        <svg class="hamburger" viewBox="-10 -10 120 120" width="250">
+          <path stroke-width=10 stroke-linecap="round" stroke-linejoin="round" class="line"
+            d="m 20 40 h 60 a 1 1 0 0 1 0 20 h -60 a 1 1 0 0 1 0 -40 h 30 v 70">
+          </path>
+        </svg>
+      </button>
+
+      <!-- * Main menu -->
+      <nav class="main-menu | flex" id="mainMenu" aria-label="navigation links" aria-expanded="false" visible="false">
+
+        <ul role="list" class="links-list">
+          <li class="contents"><a href="./Pages/projects.html" class="link" active="false"
+              title="Projects page">Projects
+            </a>
+          </li>
+          <li class="contents"><a href="./pages/contact.html" class="link" active="false"
+              title="Contact page">Contact</a>
+          </li>
+        </ul>
+      </nav>
+
+    </header>
+
+    <!-- ? Main content -->
+    <main id="main">
+
+      <!-- * Hero section -->
+      <section class="hero-section | section">
+        <video class="hero-video" muted loop playsinline>
+          <source src="./assets/hero-video.mp4" type="video/mp4">
+        </video>
+        <article class="hero-content">
+          <h1 class="hero-title">Everything Should START <br> WITH TRUST.</h1>
+        </article>
+      </section>
+
+      <!-- * About section -->
+      <section class="about | section">
+        <article>
+          <h2 class="about-title">About Us</h2>
+          <p class="about-description">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod. Quisquam, quod. Quisquam, quod.
+          </p>
+        </article>
+        <div>
+          <img src="./assets/image-1.jpg" alt="About Trust Projects" class="about-image">
+          <img src="./assets/image-2.jpg" alt="About Trust Projects" class="about-image">
+          <img src="./assets/image-3.jpg" alt="About Trust Projects" class="about-image">
+          <img src="./assets/image-4.jpg" alt="About Trust Projects" class="about-image">
+        </div>
+      </section>
+
+
+      <!-- * What we Do? Section  -->
+
+      <section class="we-do | section">
+        <h2 class="we-do-title">What we Do?</h2>
+
+        <article class="we-do-contnet">
+          <svg class="lg-svg | we-do-icon color-primary">
+            <use xlink:href="#LINK-ICON"></use>
+          </svg>
+          <h3 class="we-do-contnet-title">
+            01. <br>
+            Lorem ipsum
+          </h3>
+          <p class="we-do-contnet-description">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod. Quisquam, quod. Quisquam, quod.
+          </p>
+        </article>
+
+        <article class="we-do-contnet">
+          <svg class="lg-svg | we-do-icon color-primary">
+            <use xlink:href="#LINK-ICON"></use>
+          </svg>
+          <h3 class="we-do-contnet-title">
+            02. <br>
+            Lorem ipsum
+          </h3>
+          <p class="we-do-contnet-description">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod. Quisquam, quod. Quisquam, quod.
+          </p>
+        </article>
+
+        <article class="we-do-contnet">
+          <svg class="lg-svg | we-do-icon color-primary">
+            <use xlink:href="#LINK-ICON"></use>
+          </svg>
+          <h3 class="we-do-contnet-title">
+            03. <br>
+            Lorem ipsum
+          </h3>
+          <p class="we-do-contnet-description">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod. Quisquam, quod. Quisquam, quod.
+          </p>
+        </article>
+
+        <article class="we-do-contnet">
+          <svg class="lg-svg | we-do-icon color-primary">
+            <use xlink:href="#LINK-ICON"></use>
+          </svg>
+          <h3 class="we-do-contnet-title">
+            04. <br>
+            Lorem ipsum
+          </h3>
+          <p class="we-do-contnet-description">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod. Quisquam, quod. Quisquam, quod.
+          </p>
+        </article>
+      </section>
+
+      <!-- * Benefits of choosing us! Section -->
+
+      <section class="choosing-us | section">
+        <h2 class="choosing-us-title">Benefits of choosing us!</h2>
+
+        <article class="choosing-contnet">
+          <h3 class="choosing-contnet-title">
+            01. <br>
+            Lorem ipsum
+          </h3>
+          <p class="choosing-contnet-description">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod. Quisquam, quod. Quisquam, quod.
+          </p>
+        </article>
+
+        <article class="choosing-contnet">
+          <h3 class="choosing-contnet-title">
+            02. <br>
+            Lorem ipsum
+          </h3>
+          <p class="choosing-contnet-description">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod. Quisquam, quod. Quisquam, quod.
+          </p>
+        </article>
+
+        <article class="choosing-contnet">
+
+          <h3 class="choosing-contnet-title">
+            03. <br>
+            Lorem ipsum
+          </h3>
+          <p class="choosing-contnet-description">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod. Quisquam, quod. Quisquam, quod.
+          </p>
+        </article>
+
+        <article class="choosing-contnet">
+
+          <h3 class="choosing-contnet-title">
+            04. <br>
+            Lorem ipsum
+          </h3>
+          <p class="choosing-contnet-description">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod. Quisquam, quod. Quisquam, quod.
+          </p>
+        </article>
+      </section>
+
+
+
+      <!-- * Portfolio Section -->
+
+      <section class="portfolio | section">
+        <div class="flex | spacing-200 | max-width-40">
+          <h2 class="portfolio-title">Portfolio</h2>
+          <a class="pressable | color-light" title="View all projects" href="./pages/projects.html">
+            <svg class="sm-svg">
+              <use xlink:href="#LINK-ICON"></use>
+            </svg>
+          </a>
+        </div>
+        <p class="portfolio-description">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod. Quisquam, quod. Quisquam, quod.
         </p>
-      </article>
+        <div class="projects">
+          <article class="project">
+            <img src="./assets/image-1.jpg" alt="Project 1" class="project-image">
+            <h3 class="project-title">Project 1</h3>
+          </article>
+          <article class="project">
+            <img src="./assets/image-2.jpg" alt="Project 2" class="project-image">
+            <h3 class="project-title">Project 2</h3>
+          </article>
+      </section>
     </main>
+
+    <!-- ? Footer -->
+    <footer class="main-footer | grid">
+
+      <img src="./assets/footer-effect.png" aria-hidden="true" class="footer-effect-image">
+
+      <section class="footer-section | flex">
+
+        <article class="footer-contact">
+          <h2 class="contact-title">Get in Touch</h2>
+          <p class="contact-description">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Exercitationem adipisci commodi aut explicabo
+            deserunt cum possimus, autem mollitia, dicta illo, est sunt architecto unde sint!
+          </p>
+          <address class="contact-address">
+            <a class="contact-link | flex" href="mailto:info@trustpeojects.com.mt">
+              <svg class="sm-svg | transform-down">
+                <use xlink:href="#MAIL-ICON"></use>
+              </svg>
+              <span>
+                info@trustpeojects.com.mt
+              </span>
+            </a>
+            <a class="contact-link | flex" href="tel:+356 12345678">
+              <svg class="sm-svg | transform-up">
+                <use xlink:href="#CALL-ICON"></use>
+              </svg>
+              <span>
+                +356 | 79000000
+              </span>
+            </a>
+            <a class="contact-link | flex" href="https://maps.app.goo.gl/GewFwpisZd3vuhnF8">
+              <svg class="sm-svg | transform-up">
+                <use xlink:href="#MAP-ICON"></use>
+              </svg>
+              <span>
+                280 St Joseph High St, Hamrun HMR 1011
+              </span>
+            </a>
+          </address>
+        </article>
+
+
+        <article class="contact-views">
+          <section class="content-views-section | flex">
+            <form id="form" class="contact-form" method="post" aria-hidden="false">
+              <div class="field-group">
+
+                <div class="field-container">
+                  <label for="name" class="field-label">Name</label>
+                  <input type="text" id="name" class="input-field" required aria-label="Your name" aria-required="true"
+                    autocomplete="name" pattern="[a-zA-Z]{2,}" minlength="2" maxlength="50" />
+                </div>
+
+                <div class="field-container">
+                  <label for="number" class="field-label">Number</label>
+                  <input type="tel" id="number" class="input-field" required aria-label="Your Number"
+                    aria-required="true" autocomplete="tel" pattern="^\+(?:[0-9] ?){6,14}[0-9]$" minlength="8"
+                    maxlength="8" />
+                </div>
+              </div>
+
+              <div class="field-container">
+                <label for="email" class="field-label">Email</label>
+                <input type="email" autocomplete="email" autocorrect="off" spellcheck="false" id="email"
+                  class="input-field | email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                  aria-label="Your Email" aria-required="true" minlength="5" maxlength="50" />
+              </div>
+
+              <div class="field-container | message">
+                <label for="message" class="field-label">Message</label>
+                <textarea id="message" class="input-field | message-field" required aria-label="Your Message"
+                  aria-required="true"></textarea>
+              </div>
+            </form>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3232.4340058178745!2d14.481360426481508!3d35.88738482252146!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x130e5aa55291021b%3A0x26780906f0dd1871!2sTop%20Choice%20Electronics%20%26%20Appliances!5e0!3m2!1sen!2smt!4v1714440537221!5m2!1sen!2smt"
+              width="400" height="300" class="map" allowfullscreen="" loading="lazy" id="map" aria-hidden="true"
+              referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </section>
+          <div class="contact-buttons | flex">
+            <button type="button" class="switch" title="send email" aria-label="send email" aria-controls="form"
+              aria-expanded="true" aria-haspopup="true" active="true" />
+            <button type="button" class="switch" title="view map" aria-label="view map" aria-controls="map"
+              aria-expanded="false" aria-haspopup="true" active="false" />
+          </div>
+
+        </article>
+      </section>
+    </footer>
   </body>
 
 </html>
