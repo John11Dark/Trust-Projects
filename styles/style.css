@@ -1,6 +1,7 @@
 /* ? Third parties   */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&family=Quicksand:wght@300;400;500;600;700&family=Rubik:wght@300;400;600;700;800&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Noto+Color+Emoji&family=Pacifico&family=Palanquin+Dark:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Raleway:ital,wght@0,100..900;1,100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
 
 /* ? Custom Props */
 :root {
@@ -26,9 +27,12 @@
   --secondary-color-opacity-20: #a0a09620;
   --secondary-color-opacity-10: #a0a09610;
   /* * Fonts */
-  --primary-font: "Quicksand", sans-serif;
+  /* --primary-font: "Quicksand", sans-serif;
   --secondary-font: "Rubik", sans-serif;
-  --tertiary-font: "Poppins", sans-serif;
+  --tertiary-font: "Poppins", sans-serif; */
+  --primary-font: "Raleway", sans-serif;
+  --secondary-font: "Plus Jakarta Sans", sans-serif;
+  --tertiary-font: "Work Sans", sans-serif;
 
   /* * Sizes */
   --font-link: calc(0.5vw + 0.5vh + 0.5rem);
@@ -235,12 +239,14 @@ h6 {
 
 p {
   font-size: var(--font-200);
-  font-weight: 100;
-  font-family: var(--tertiary-font);
-  color: var(--surface-grayish);
+  font-weight: 400;
+  font-family: var(--primary-font);
+  color: var(--secondary-color);
 }
 
 label {
+  font-size: var(--font-100);
+  font-family: var(--secondary-font);
   color: var(--primary-color);
   font-weight: 600;
 }
@@ -328,10 +334,21 @@ abbr {
   cursor: help;
 }
 
-::selection,
+::selection {
+  background-color: var(--primary-color);
+  color: var(--background-color);
+  text-shadow: none;
+}
+
 ::-moz-selection {
   background-color: var(--primary-color);
-  color: var(--secondary-color);
+  color: var(--background-color);
+  text-shadow: none;
+}
+
+::-webkit-selection {
+  background-color: var(--primary-color);
+  color: var(--background-color);
   text-shadow: none;
 }
 
@@ -367,15 +384,6 @@ svg {
 }
 
 /* ? Custom elements styling */
-
-.primary-color {
-  color: var(--primary-color);
-}
-
-.secondary-color {
-  color: var(--secondary-color);
-}
-
 keyword {
   color: var(--primary-color);
 }
@@ -389,10 +397,28 @@ keyword[attr="3d-like"] {
 keyword[attr="emoji"] {
   font-family: "Noto Color Emoji", sans-serif;
 }
+
+.primary-color {
+  color: var(--primary-color);
+}
+
+.secondary-color {
+  color: var(--secondary-color);
+}
+
 .flex {
   display: flex;
   align-items: center;
   align-content: center;
+}
+
+.contents {
+  display: contents;
+}
+
+.grid {
+  display: grid;
+  align-items: center;
 }
 
 .center {
@@ -424,9 +450,11 @@ keyword[attr="emoji"] {
 .padding-500 {
   padding: var(--spacing-500);
 }
+
 .padding-600 {
   padding: var(--spacing-600);
 }
+
 .padding-700 {
   padding: var(--spacing-700);
 }
@@ -493,15 +521,6 @@ keyword[attr="emoji"] {
   color: var(--primary-color-light);
 }
 
-.contents {
-  display: contents;
-}
-
-.grid {
-  display: grid;
-  align-items: center;
-}
-
 .flip {
   transform: scaleX(-1);
 }
@@ -525,6 +544,11 @@ keyword[attr="emoji"] {
 .md-svg {
   max-width: var(--icon-200);
   max-height: var(--icon-200);
+}
+
+.lg-svg {
+  max-width: var(--icon-900);
+  max-height: var(--icon-900);
 }
 
 #data-wrapper {
