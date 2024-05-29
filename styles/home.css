@@ -58,10 +58,6 @@ main {
 }
 /* * About Section */
 
-.about.section {
-  overflow: hidden;
-}
-
 .about-images-collection {
   display: grid;
   max-height: 550px;
@@ -98,4 +94,18 @@ main {
   grid-column: 2;
   grid-row: 2 / span 4;
   max-height: 230px;
+}
+
+/* * What We do Section */
+
+.we-do-content {
+  text-align: left;
+  max-width: 30ch;
+  background-color: var(--primary-color-opacity-10);
+  padding: var(--spacing-400);
+  border-radius: var(--radius-300);
+  place-content: center;
+  place-items: center;
+  place-self: center;
+  text-align: center;
 }
