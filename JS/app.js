@@ -270,3 +270,66 @@ if (closeContactPageButton) {
     body.setAttribute("isObserving", true);
   });
 }
+
+// * ? --> Contact Page
+
+const map = document.querySelector("#map");
+const contactButton = document.querySelector("#sendMessageBtn");
+const locationButton = document.querySelector("#mapButton");
+const contactIllustration = document.querySelector("#contactImage");
+
+locationButton?.addEventListener("pointerdown", () => {
+  contactIllustration.setAttribute("visible", false);
+  contactForm.setAttribute("visible", false);
+  map.setAttribute("visible", true);
+  map.removeAttribute("hidden");
+  map.setAttribute("aria-hidden", false);
+});
+
+contactButton?.addEventListener("pointerdown", () => {
+  contactIllustration.setAttribute("visible", false);
+  map.setAttribute("visible", false);
+  contactForm.setAttribute("visible", true);
+  contactForm.removeAttribute("hidden");
+  contactForm.setAttribute("aria-hidden", false);
+});
+
+contactForm?.addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const formData = new FormData(contactForm);
+  const data = validateForm(formData);
+  if (!data) return;
+  const response = await fetch("https://formspree.io/f/mnqoqzqz", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(data),
+  });
+
+  if (response.ok) {
+    contactForm.reset();
+    alert("Message sent successfully");
+  } else {
+    alert("Message not sent, please try again");
+  }
+});
+
+async function validateForm() {
+  const data = Object.fromEntries(formData);
+  const { name, email, message } = data;
+  if (name.length <= 0) {
+    alert("Please enter your name");
+    return;
+  }
+  if (email.length <= 0) {
+    alert("Please enter your email");
+    return;
+  }
+  if (message.length <= 0) {
+    alert("Please enter your message");
+    return;
+  }
+
+  return data;
+}
