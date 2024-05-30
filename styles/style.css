@@ -307,7 +307,7 @@ a.outline-link {
 button {
   display: inline-block;
   font-size: var(--font-button);
-  padding: var(--spacing-300);
+  padding: var(--spacing-300) var(--spacing-400);
   border-radius: var(--radius-100);
   font-family: var(--secondary-font);
   color: var(--primary-color);
@@ -317,33 +317,31 @@ button {
   cursor: pointer;
 }
 
-.primary-button {
-  ----border-color: var(--primary-color);
-  border: var(--border-size-100) solid var(----border-color);
-  background-color: var(--primary-color);
-  color: var(--primary-color-light);
-}
-.secondary-button {
-  background-color: transparent;
-  border: var(--border-size-100) solid var(--primary-color-light);
-  color: var(--primary-color-light);
-}
-
-.action-buttons {
-  justify-content: center;
-  gap: var(--spacing-300);
+button.svg {
+  display: flex;
   place-content: center;
   place-items: center;
   place-self: center;
-  margin: var(--spacing-300);
-  padding: 10em;
+  gap: var(--spacing-200);
+  fill: var(--primary-color);
+  stroke: var(--primary-color);
 }
 
-.button-svg {
-  justify-content: space-around;
+button.outline {
+  border: solid var(--primary-color) 1px;
+}
+
+button.fill {
+  background-color: var(--primary-color);
+  border: solid var(--primary-color) 1px;
+  color: var(--primary-color-light);
+  stroke: var(--primary-color-light);
   fill: var(--primary-color-light);
 }
 
+button.svg > svg {
+  margin-top: 4px;
+}
 abbr {
   position: relative;
   cursor: help;
@@ -1070,7 +1068,6 @@ address {
 }
 
 .contact-link {
-  color: var(--primary-color-dark);
   font-size: var(--font-100);
   font-weight: 400;
   justify-content: flex-start;
@@ -1082,7 +1079,6 @@ address {
 }
 
 .contact-link svg {
-  stroke: var(--primary-color-dark);
 }
 
 .contact-link:hover svg {
