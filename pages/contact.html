@@ -176,7 +176,7 @@
   </data>
   </head>
 
-  <body isObserving="true" single-page-layout="false">
+  <body isObserving="false" single-page-layout="false">
 
     <!-- ? Skip header and navigation bar -->
     <button tabindex="1" aria-hidden="false" aria-label="skip navigation bar" title="skip navigation bar"
@@ -219,7 +219,8 @@
       </button>
 
       <!-- * Main menu -->
-      <nav class="main-menu | flex" id="mainMenu" aria-label="navigation links" aria-expanded="false" visible="false">
+      <nav class="main-menu | flex" id="mainMenu" aria-label="navigation links" aria-expanded="false"
+        data-visible="false">
 
         <ul role="list" class="links-list">
           <li class="contents"><a href="./projects.html" class="link" active="false" title="Projects page">Projects
@@ -337,7 +338,8 @@
           </div>
         </article>
         <article class="contact-frames">
-          <img class="contact-image" src="../assets/contact.png" alt="Trust Projects office building" />
+          <img class="contact-image" id="contactImage" aria-hidden="true" aria-label="Trust Projects"
+            alt="Trust Projects" src="../assets/contact.png" alt="Trust Projects office building" />
 
           <form id="form" class="contact-form" method="post" aria-hidden="true" hidden>
             <div class="field-group">
@@ -373,7 +375,6 @@
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3232.4340058178745!2d14.481360426481508!3d35.88738482252146!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x130e5aa55291021b%3A0x26780906f0dd1871!2sTop%20Choice%20Electronics%20%26%20Appliances!5e0!3m2!1sen!2smt!4v1714440537221!5m2!1sen!2smt"
             width="400" height="300" class="map" allowfullscreen="" loading="lazy" id="map" aria-hidden="true" hidden
             referrerpolicy="no-referrer-when-downgrade"></iframe>
-
 
         </article>
       </section>
