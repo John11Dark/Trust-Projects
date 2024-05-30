@@ -257,12 +257,13 @@ body[single-page-layout="true"]::before {
   margin: var(--spacing-900) 0 0 0;
   justify-content: flex-start;
   gap: var(--spacing-400);
-  align-self: flex-end;
-  justify-self: flex-end;
+  align-self: flex-start;
+  justify-self: flex-start;
 }
 
 .svg-link {
-  fill: var(--primary-color-light);
+  stroke-width: 10px;
+  fill: var(--primary-color);
 }
 
 /*  */
