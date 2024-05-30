@@ -98,34 +98,14 @@ main {
 
 .we-do-content {
   text-align: left;
-  max-width: 30ch;
+  max-width: 40ch;
   background-color: var(--primary-color-opacity-10);
-  padding: var(--spacing-400);
+  padding: var(--spacing-500);
   border-radius: var(--radius-300);
   place-content: center;
   place-items: center;
   place-self: center;
   text-align: center;
-}
-
-.section:nth-child(1) {
-  background-color: rgba(15, 71, 121, 0.329);
-}
-
-.section:nth-child(2) {
-  background-color: rgba(240, 248, 255, 0.329);
-}
-
-.section:nth-child(3) {
-  background-color: rgba(96, 128, 24, 0.329);
-}
-
-.section:nth-child(4) {
-  background-color: rgba(17, 54, 102, 0.329);
-}
-
-.section:nth-child(5) {
-  background-color: rgba(102, 16, 59, 0.329);
 }
 
 /* Portfolio Section */
