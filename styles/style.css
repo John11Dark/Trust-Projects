@@ -398,6 +398,82 @@ svg {
   background-color: #797369;
 }
 
+/* ? <-*-> horizontal scrollable container <-*-> */
+
+.overflow-x-visible {
+  overflow-x: auto;
+  width: 100%;
+}
+
+.snaps-inline {
+  max-width: max(99%, 99vw);
+  scroll-behavior: smooth;
+  overscroll-behavior-inline: contain;
+  scroll-snap-type: inline mandatory;
+  transition: all 0.5s ease;
+}
+
+.snaps-inline::-webkit-scrollbar {
+  display: none;
+}
+
+.snap-element {
+  scroll-snap-align: start;
+}
+
+.indicatorsList {
+  width: 90%;
+  height: 8px;
+  display: flex;
+  position: absolute;
+  gap: 1rem;
+  bottom: 0;
+  align-self: center;
+  justify-self: center;
+  align-items: center;
+  justify-content: center;
+  display: none;
+}
+
+.indicators {
+  width: 30px;
+  height: 100%;
+  background-color: var(--opacity-light-100);
+  border-radius: 1rem;
+  cursor: pointer;
+  transition: all 0.25s linear;
+  transform-origin: center;
+}
+
+.indicators[active="true"] {
+  transition-delay: 0.1s;
+  background-color: var(--primary-color);
+  transform: scale(1.2);
+}
+
+.indicators[active="false"] {
+  transition-delay: 0.15s;
+}
+
+@media (max-width: 50em) {
+  .snaps-inline-parent-container {
+    position: relative;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    width: max(100%, 93vw);
+  }
+  .snaps-inline {
+    grid-auto-columns: 100% !important;
+    grid-auto-flow: column;
+    overflow-x: auto;
+    padding-bottom: 1em;
+  }
+  .indicators-list {
+    display: flex;
+  }
+}
+
 /* ? Custom elements styling */
 keyword {
   color: var(--primary-color);
@@ -436,6 +512,11 @@ keyword[attr="emoji"] {
   align-items: center;
 }
 
+.grid-columns {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 23%;
+}
 .center {
   place-content: center;
   place-items: center;
@@ -955,14 +1036,8 @@ main {
   padding-top: var(--header-hight);
 }
 
-.section {
-  height: 100vh;
-  height: 100dvh;
-  align-content: center;
-}
-
 /* ? <-*-> Footer <-*-> */
-footer {
+footer.main-footer {
   height: 50vh;
   height: 50dvh;
   width: 100vw;
@@ -1091,11 +1166,6 @@ address {
   opacity: 0.8;
 }
 
-.switch:hover {
-  opacity: 1;
-  transform: scaleX(1.1);
-}
-
 /* ?  Screens */
 /* * Laptops and small size monitors*/
 
@@ -1173,6 +1243,32 @@ address {
   .main-menu[visible="true"] {
     display: grid;
   }
+  footer.main-footer {
+    height: 80vh;
+    height: 80dvh;
+    width: 100vw;
+    width: 100dvw;
+    background-color: var(--primary-color);
+    position: relative;
+    margin-top: 60vh;
+  }
+  .footer-section {
+    flex-wrap: wrap;
+    place-content: center;
+    place-items: center;
+    place-self: center;
+    max-width: 99vw;
+  }
+  #form {
+    overflow: hidden;
+    width: 350px;
+    height: 250px;
+  }
+
+  .map {
+    width: 350px;
+    height: 250px;
+  }
 }
 
 /* ? Hover Support  */
@@ -1230,6 +1326,10 @@ address {
     background-color: var(--primary-color-light);
     color: var(--primary-color);
     fill: var(--primary-color);
+  }
+  .switch:hover {
+    opacity: 1;
+    transform: scaleX(1.1);
   }
 }
 
