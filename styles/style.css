@@ -1377,3 +1377,7 @@ address {
     scroll-behavior: auto !important;
   }
 }
+
+*[visible="false"]:not(.link) {
+  display: none;
+}
