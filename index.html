@@ -184,16 +184,20 @@
           </p>
         </article>
         <div class="about-images-collection">
-          <img src="./assets/image-1.jpg" alt="About Trust Projects" class="about-image">
-          <img src="./assets/image-2.jpg" alt="About Trust Projects" class="about-image">
-          <img src="./assets/image-3.jpg" alt="About Trust Projects" class="about-image">
-          <img src="./assets/image-4.jpg" alt="About Trust Projects" class="about-image">
+          <div class="grid | spacing-300">
+            <img src="./assets/image-1.jpg" alt="About Trust Projects" class="about-image">
+            <img src="./assets/image-2.jpg" alt="About Trust Projects" class="about-image">
+          </div>
+          <div class="grid | spacing-300">
+            <img src="./assets/image-3.jpg" alt="About Trust Projects" class="about-image">
+            <img src="./assets/image-4.jpg" alt="About Trust Projects" class="about-image">
+          </div>
         </div>
       </section>
 
       <!-- * What we Do? Section  -->
 
-      <section class="we-do | section | grid | padding-600">
+      <section class="we-do | section | grid | padding-600 | spacing-600">
         <h2 class="we-do-title | section-title">What we Do?</h2>
 
         <div class="we-do-content-container | center | flex | spacing-200">
@@ -268,7 +272,7 @@
 
       <!-- * Benefits of choosing us! Section -->
 
-      <section class="choosing-us | section | | grid | padding-600">
+      <section class="choosing-us | section | | grid | padding-600 | spacing-600">
         <h2 class="choosing-us-title | section-title">Benefits of choosing us!</h2>
 
         <div class="center | flex | spacing-200 | we-do-content-container">
@@ -317,29 +321,27 @@
       </section>
 
 
-
       <!-- * Portfolio Section -->
 
       <section class="portfolio | section padding-600">
         <div class="flex | spacing-200 | max-width-40">
-          <h2 class="portfolio-title">Portfolio</h2>
+          <h2 class="portfolio-title | section-title">Portfolio</h2>
           <a class="pressable | color-light" title="View all projects" href="./pages/projects.html">
             <svg class="sm-svg">
               <use xlink:href="#LINK-ICON"></use>
             </svg>
           </a>
         </div>
-        <p class="portfolio-description">
+        <p class="portfolio-description | section-description">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod. Quisquam, quod. Quisquam, quod.
         </p>
         <div class="projects-content-container | flex | spacing-200 | center">
           <article class="project">
             <img src="./assets/image-1.jpg" alt="Project 1" class="project-image">
             <h3 class="project-title">Project 1</h3>
-          </article>
-          <article class="project">
-            <img src="./assets/image-2.jpg" alt="Project 2" class="project-image">
-            <h3 class="project-title">Project 2</h3>
+            <a class="button-link | animate | outline-link | project-button" href="./pages/projects.html#1">
+              View Project
+            </a>
           </article>
       </section>
     </main>
