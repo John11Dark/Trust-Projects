@@ -210,85 +210,6 @@ body[single-page-layout="true"]::before {
   filter: blur(10px);
 }
 
-/* ? <-*-> horizontal scrollable container <-*-> */
-
-.scrollableContainer {
-  display: grid;
-  max-width: max(99%, 99vw);
-  overflow-y: visible;
-  scroll-behavior: smooth;
-  overscroll-behavior-inline: contain;
-  scroll-snap-type: inline mandatory;
-  transition: all 0.5s ease;
-}
-
-.scrollableContainer::-webkit-scrollbar {
-  display: none;
-}
-
-.snapOrder {
-  scroll-snap-align: start;
-}
-
-.indicatorsList {
-  width: 90%;
-  height: 8px;
-  display: flex;
-  position: absolute;
-  gap: 1rem;
-  bottom: 0;
-  align-self: center;
-  justify-self: center;
-  align-items: center;
-  justify-content: center;
-  display: none;
-}
-
-.indicators {
-  width: 30px;
-  height: 100%;
-  background-color: var(--opacity-light-100);
-  border-radius: 1rem;
-  cursor: pointer;
-  transition: all 0.25s linear;
-  transform-origin: center;
-}
-
-.indicators[active="true"] {
-  transition-delay: 0.1s;
-  background-color: var(--primary-color);
-  transform: scale(1.2);
-}
-
-.indicators[active="false"] {
-  transition-delay: 0.15s;
-}
-
-@media (max-width: 50em) {
-  .scrollableContainerParent {
-    position: relative;
-    display: grid;
-    align-items: center;
-    justify-content: center;
-    width: max(100%, 93vw);
-  }
-  .scrollableContainer {
-    grid-auto-columns: 100%;
-    grid-auto-flow: column;
-    overflow-x: auto;
-    padding-bottom: 1em;
-  }
-  /* .snapOrder{
-    transform: scale(0.7);
-  }
-  .snapOrder[isObserving="true"]{
-    transform: scale(1);
-  } */
-  .indicatorsList {
-    display: flex;
-  }
-}
-
 /* ? <--> Contact section <--> */
 
 .contact-section {
@@ -501,4 +422,10 @@ body[single-page-layout="true"]::before {
   gap: var(--spacing-100);
   fill: var(--primary-color-light);
   margin: var(--spacing-400) 0;
+}
+
+.section {
+  height: 100vh;
+  height: 100dvh;
+  align-content: center;
 }
