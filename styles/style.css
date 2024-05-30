@@ -289,6 +289,21 @@ option {
   color: var(--primary-color);
 }
 
+a.button-link {
+}
+
+a.outline-link {
+  border: var(--border-size-100) solid var(--primary-color);
+  padding: var(--spacing-300);
+  border-radius: var(--radius-100);
+  font-family: var(--secondary-font);
+  color: var(--primary-color);
+  font-weight: 600;
+  background-color: transparent;
+  text-transform: capitalize;
+  cursor: pointer;
+}
+
 button {
   display: inline-block;
   font-size: var(--font-button);
@@ -758,6 +773,7 @@ main {
 .section {
   height: 100vh;
   height: 100dvh;
+  align-content: center;
 }
 
 /* ? <-*-> Footer <-*-> */
