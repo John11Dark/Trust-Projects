@@ -1,4 +1,4 @@
-body[single-page-layout="true"]::before {
+/* body[single-page-layout="true"]::before {
   content: "";
   position: absolute;
   top: 0;
@@ -12,7 +12,7 @@ body[single-page-layout="true"]::before {
   -webkit-backdrop-filter: blur(5px);
   backdrop-filter: blur(10px);
   filter: blur(10px);
-}
+} */
 .testimonialSectionBackDrop {
   /*Outer container*/
   position: relative;
@@ -254,7 +254,6 @@ body[single-page-layout="true"]::before {
 }
 
 .social-links-list {
-  margin: var(--spacing-900) 0 0 0;
   justify-content: flex-start;
   gap: var(--spacing-400);
   align-self: flex-start;
@@ -272,6 +271,7 @@ body[single-page-layout="true"]::before {
   place-content: center;
   place-items: center;
   place-self: center;
+  background-color: red;
 }
 
 .field-group {
@@ -302,7 +302,7 @@ body[single-page-layout="true"]::before {
   left: 20px;
   font-weight: 600;
   color: var(--primary-color);
-  cursor: pointer;
+  cursor: text;
   transition: all 0.5s ease;
   z-index: 10;
 }

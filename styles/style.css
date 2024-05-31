@@ -304,6 +304,11 @@ a.outline-link {
   cursor: pointer;
 }
 
+.svg-link {
+  transition: all 0.5s ease;
+  display: inline-block;
+}
+
 button {
   display: inline-block;
   font-size: var(--font-button);
@@ -315,6 +320,7 @@ button {
   background-color: transparent;
   text-transform: capitalize;
   cursor: pointer;
+  transition: all 0.5s ease;
 }
 
 button.svg {
@@ -337,6 +343,15 @@ button.fill {
   color: var(--primary-color-light);
   stroke: var(--primary-color-light);
   fill: var(--primary-color-light);
+}
+
+button:hover {
+  background-color: var(--primary-color-light);
+  border: solid var(--primary-color-light) 1px;
+  color: var(--primary-color);
+  stroke: var(--primary-color);
+  fill: var(--primary-color);
+  transform: scale(1.01);
 }
 
 button.svg > svg {
@@ -972,10 +987,11 @@ header[isInteracting="true"] {
 }
 
 .links-list {
+  display: flex;
   align-items: center;
   justify-content: flex-end;
   align-self: flex-end;
-  gap: var(--spacing-300);
+  gap: var(--spacing-500);
 }
 
 .nav-button {
@@ -1072,6 +1088,7 @@ address {
   font-weight: 400;
   justify-content: flex-start;
   gap: var(--spacing-300);
+  max-width: 37ch;
 }
 
 .contact-link:hover {
@@ -1103,11 +1120,15 @@ address {
 }
 
 #form {
-  overflow: hidden;
   max-width: 450px;
   max-height: 300px;
   width: 450px;
   height: 300px;
+}
+
+.submit-button {
+  margin-top: 6.5rem;
+  margin-left: var(--spacing-100);
 }
 
 .map {
@@ -1326,6 +1347,11 @@ address {
   .switch:hover {
     opacity: 1;
     transform: scaleX(1.1);
+  }
+  .svg-link:hover {
+    fill: var(--primary-color-light);
+    stroke: var(--primary-color-light);
+    transform: scale(1.1);
   }
 }
 
