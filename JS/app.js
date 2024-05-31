@@ -298,37 +298,43 @@ contactForm?.addEventListener("submit", async (e) => {
   e.preventDefault();
   const formData = new FormData(contactForm);
   const data = validateForm(formData);
-  if (!data) return;
-  const response = await fetch("https://formspree.io/f/mnqoqzqz", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(data),
-  });
+  if (!data) alert("Please fill in all fields");
+  // const response = await fetch("https://formspree.io/f/mnqoqzqz", {
+  //   method: "POST",
+  //   headers: {
+  //     "Content-Type": "application/json",
+  //   },
+  //   body: JSON.stringify(data),
+  // });
 
-  if (response.ok) {
-    contactForm.reset();
-    alert("Message sent successfully");
-  } else {
-    alert("Message not sent, please try again");
-  }
+  // if (response.ok) {
+  //   contactForm.reset();
+  //   alert("Message sent successfully");
+  // } else {
+  //   alert("Message not sent, please try again");
+  // }
 });
 
-async function validateForm() {
+async function validateForm(formData) {
   const data = Object.fromEntries(formData);
-  const { name, email, message } = data;
+  const { name, email, number, message } = data;
+  console.log(data);
   if (name.length <= 0) {
     alert("Please enter your name");
-    return;
+    return null;
   }
   if (email.length <= 0) {
     alert("Please enter your email");
-    return;
+    return null;
   }
   if (message.length <= 0) {
     alert("Please enter your message");
-    return;
+    return null;
+  }
+  const newNumber = data.number.replace("+", "");
+  if (number.length <= 0 || isNaN(newNumber)) {
+    alert("Please enter your number");
+    return null;
   }
 
   return data;
