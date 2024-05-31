@@ -213,7 +213,7 @@
                 <use xlink:href="#CALL-ICON"></use>
               </svg>
               <span>
-                +356 | 79000000
+                +356 | 77146264
               </span>
             </a>
             <a class="contact-link | flex" href="https://maps.app.goo.gl/GewFwpisZd3vuhnF8">
