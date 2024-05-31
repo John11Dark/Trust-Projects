@@ -176,7 +176,7 @@
   </data>
   </head>
 
-  <body isObserving="false" single-page-layout="false">
+  <body isObserving="false" single-page-layout="true">
 
     <!-- ? Skip header and navigation bar -->
     <button tabindex="1" aria-hidden="false" aria-label="skip navigation bar" title="skip navigation bar"
@@ -245,34 +245,51 @@
             displayed on the map below for your convenience. You can also reach out to us by filling out the form
             provided. We look forward to connecting with you!
           </p>
-          <address class="contact-address">
-            <a class="contact-link | flex | color-primary" href="mailto:info@trustpeojects.com.mt">
-              <svg class="sm-svg | transform-down">
-                <use xlink:href="#MAIL-ICON"></use>
-              </svg>
-              <span>
-                info@trustpeojects.com.mt
-              </span>
-            </a>
-            <a class="contact-link | flex | color-primary" href="tel:+356 12345678">
-              <svg class="sm-svg | transform-up">
-                <use xlink:href="#CALL-ICON"></use>
-              </svg>
-              <span>
-                +356 | 79000000
-              </span>
-            </a>
-            <a class="contact-link | flex | color-primary" href="https://maps.app.goo.gl/GewFwpisZd3vuhnF8">
-              <svg class="sm-svg | transform-up">
+
+          <div class="flex | spacing-200">
+            <button id="mapButton" class="svg | outline" title="View Location On google" aria-label="See location"
+              type="button">
+              <span>Location</span>
+              <svg class="sm-svg">
                 <use xlink:href="#MAP-ICON"></use>
               </svg>
-              <span>
-                280 St Joseph High St, Hamrun HMR 1011
-              </span>
-            </a>
+            </button>
+            <button id="sendMessageBtn" class="svg | fill" title="Send a message" aria-label="Send a message"
+              type="button">
 
+              <span>Contact</span>
+              <svg class="sm-svg">
+                <use xlink:href="#MAIL-ICON"></use>
+              </svg>
+            </button>
+
+          </div>
+          <address class="contact-address">
 
             <ul role="list" aria-label="social links list" class="social-links-list | flex | color-primary">
+              <li class="contents">
+                <a rel="noopener noreferrer" class="svg-link | clickable" target="_blank" href="tel:+35677146264"
+                  title="Give us a call">
+                  <svg class="svg-icon | md-svg">
+                    <use xlink:href="#CALL-ICON"></use>
+                  </svg>
+                </a>
+              </li>
+
+              <li class="contents">
+                <a rel="noopener noreferrer" class="svg-link | clickable" target="_blank"
+                  href="https://maps.app.goo.gl/GewFwpisZd3vuhnF8" title="Find Location On Google">
+                  <svg class="svg-icon | md-svg">
+                    <use xlink:href="#MAP-ICON"></use>
+                  </svg>
+                </a>
+                <a aria-label="Email" class="svg-link | clickable" title="Email us on our official email!"
+                  href="mailto:info@trustpeojects.com.mt">
+                  <svg class="svg-icon | md-svg | transform-down">
+                    <use xlink:href="#MAIL-ICON"></use>
+                  </svg>
+                </a>
+              </li>
 
               <li class="contents">
                 <a rel="noopener noreferrer" class="svg-link | clickable" target="_blank" aria-label="Facebook"
@@ -316,28 +333,10 @@
                 </a>
               </li>
             </ul>
-
           </address>
-          <div class="flex | spacing-200">
-            <button id="mapButton" class="svg | outline" title="View Location On google" aria-label="See location"
-              type="button">
-              <span>Location</span>
-              <svg class="sm-svg">
-                <use xlink:href="#MAP-ICON"></use>
-              </svg>
-            </button>
-            <button id="sendMessageBtn" class="svg | fill" title="Send a message" aria-label="Send a message"
-              type="button">
 
-              <span>Contact</span>
-              <svg class="sm-svg">
-                <use xlink:href="#MAIL-ICON"></use>
-              </svg>
-            </button>
-
-          </div>
         </article>
-        <article class="contact-frames">
+        <article class="contact-views">
           <img class="contact-image" id="contactImage" aria-hidden="true" aria-label="Trust Projects"
             alt="Trust Projects" src="../assets/contact.png" alt="Trust Projects office building" />
 
@@ -346,30 +345,39 @@
 
               <div class="field-container">
                 <label for="name" class="field-label">Name</label>
-                <input type="text" id="name" class="input-field" required aria-label="Your name" aria-required="true"
-                  autocomplete="name" pattern="[a-zA-Z]{2,}" minlength="2" maxlength="50" />
+                <input type="text" id="name" name="name" class="input-field" required aria-label="Your name"
+                  aria-required="true" autocomplete="name" pattern="[a-zA-Z]{2,}" minlength="2" maxlength="50" />
+
               </div>
 
               <div class="field-container">
                 <label for="number" class="field-label">Number</label>
-                <input type="tel" id="number" class="input-field" required aria-label="Your Number" aria-required="true"
-                  autocomplete="tel" pattern="^\+(?:[0-9] ?){6,14}[0-9]$" minlength="8" maxlength="8" />
+                <input type="tel" id="number" name="number" class="input-field" required aria-label="Your Number"
+                  aria-required="true" autocomplete="tel" pattern="^\+(?:[0-9] ?){6,14}[0-9]$" minlength="8" />
               </div>
             </div>
 
             <div class="field-container">
               <label for="email" class="field-label">Email</label>
-              <input type="email" autocomplete="email" autocorrect="off" spellcheck="false" id="email"
+              <input type="email" name="email" autocomplete="email" autocorrect="off" spellcheck="false" id="email"
                 class="input-field | email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
                 aria-label="Your Email" aria-required="true" minlength="5" maxlength="50" />
             </div>
 
             <div class="field-container | message">
               <label for="message" class="field-label">Message</label>
-              <textarea id="message" class="input-field | message-field" required aria-label="Your Message"
-                aria-required="true"></textarea>
+              <textarea name="message" id="message" class="input-field | message-field" required
+                aria-label="Your Message" aria-required="true"></textarea>
             </div>
+
+            <button type="submit" class="submit-button | fill | svg" aria-label="Send message" title="Send message">
+              <span>Send</span>
+              <svg class="sm-svg">
+                <use xlink:href="#MAIL-ICON"></use>
+              </svg>
+            </button>
           </form>
+
 
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3232.4340058178745!2d14.481360426481508!3d35.88738482252146!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x130e5aa55291021b%3A0x26780906f0dd1871!2sTop%20Choice%20Electronics%20%26%20Appliances!5e0!3m2!1sen!2smt!4v1714440537221!5m2!1sen!2smt"
