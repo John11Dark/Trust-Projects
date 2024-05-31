@@ -352,8 +352,9 @@
 
               <div class="field-container">
                 <label for="number" class="field-label">Number</label>
-                <input type="tel" id="number" name="number" class="input-field" required aria-label="Your Number"
-                  aria-required="true" autocomplete="tel" pattern="^\+(?:[0-9] ?){6,14}[0-9]$" minlength="8" />
+                <input number-input type="tel" id="number" name="number" inputmode="numeric" class="input-field"
+                  required aria-label="Your Number" aria-required="true" autocomplete="tel" pattern="[0-9]+"
+                  minlength="8" />
               </div>
             </div>
 
