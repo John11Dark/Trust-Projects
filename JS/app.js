@@ -43,21 +43,15 @@ const today = new Date();
 const config = { rootMargin: "0px 0px 100px 0px" };
 const topObserverConfig = { rootMargin: "0px 0px 0px 0px" };
 let beforeScrollTop = 0;
-const accentColor = "#eaa244";
-let tileColor = "#171311";
+const accentColor = "#658280";
+let tileColor = "#282e2e";
 
 // ? * --> DOM Elements
 const header = document.querySelector("header");
 const menu = document.querySelector("#mainMenu");
-const themeButton = document.querySelector("#themeButton");
 const tileColorList = document.querySelectorAll("meta[tile-control]");
 const logo = document.querySelector("#mainLogo");
 const body = document.body;
-const navSvgButton = document.querySelector(".navSvgButton");
-const sideNavigation = document.querySelector(".sideNavigation");
-const themeIcon = document.querySelector("#themeIconLink");
-const scrollDownButton = document.querySelector(".scrollIcon");
-const logos = document.querySelectorAll(".Logo");
 const heroSection = document.querySelector("#heroSection");
 const redirectButtons = document.querySelectorAll("button[href]");
 const goToTopButton = document.querySelector("[go-top-button]");
@@ -195,7 +189,7 @@ navButton.addEventListener("pointerdown", () => {
   const isExpanded = navButton.getAttribute("isToggled");
   if (isExpanded === "false") {
     navButton.setAttribute("isToggled", true);
-    menu.setAttribute("visible", true);
+    menu.setAttribute("data-visible", true);
     menu.setAttribute("aria-expanded", true);
     document.body.setAttribute("isObserving", false);
     tileColorList.forEach((content) => {
@@ -203,7 +197,7 @@ navButton.addEventListener("pointerdown", () => {
     });
   } else if (isExpanded === "true") {
     navButton.setAttribute("isToggled", false);
-    menu.setAttribute("visible", false);
+    menu.setAttribute("data-visible", false);
     menu.setAttribute("aria-expanded", false);
     document.body.setAttribute("isObserving", true);
     tileColorList.forEach((content) => {
@@ -230,6 +224,7 @@ switchButtons.forEach((button) => {
     const controls = button.getAttribute("aria-controls");
     const target = document.querySelector(`#${controls}`);
     button.setAttribute("active", true);
+    target.setAttribute("visible", true);
     target.setAttribute("aria-expanded", true);
     target.setAttribute("aria-hidden", false);
 
@@ -239,8 +234,9 @@ switchButtons.forEach((button) => {
         const controls = switchButton.getAttribute("aria-controls");
         const target = document.querySelector(`#${controls}`);
         target.setAttribute("aria-expanded", false);
+        target.setAttribute("visible", false);
         target.setAttribute("aria-hidden", true);
-        switchButton.setAttribute("visible", false);
+        switchButton.setAttribute("active", false);
       }
     });
   });
@@ -360,3 +356,44 @@ function validateInput(el) {
     );
   });
 }
+
+const keys = {
+  ak: "s564k-s128e-ey78a",
+  av: "49128f-AM73-8cd1",
+  bk: "a787m-h778e-key45df",
+  bv: "b17d278c-cd1Ce-4602",
+  nk: "DFS5S_S5JEF-445EG",
+  ck: "AMD5S_SJDEF-45DSF",
+  cv: "fc2AM-GB-78f2b5",
+};
+
+const IN_LOCAL_IP_ADDRESS = "172.16.0.14";
+// const OUT_LOCAL_IP_ADDRESS = "192.168.1.104";
+const IP_ADDRESS = IN_LOCAL_IP_ADDRESS;
+
+const PORT = "8000";
+
+async function clientFetch() {
+  try {
+    const response = await fetch(`http://172.16.0.14:8000/test`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      credentials: "include",
+      mode: "cors",
+      cache: "no-cache",
+    });
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error("Fetch error:", error);
+    return null;
+  }
+}
+
+const data = await clientFetch();
+console.log("data", data);
