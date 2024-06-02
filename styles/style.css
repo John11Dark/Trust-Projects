@@ -845,6 +845,11 @@ keyword[attr="emoji"] {
 .relative {
   position: relative;
 }
+
+*[visible="false"] {
+  display: none;
+}
+
 #data-wrapper {
   opacity: 0;
   position: absolute;
@@ -1055,130 +1060,12 @@ main {
   padding-top: var(--header-hight);
 }
 
-/* ? <-*-> Footer <-*-> */
-footer.main-footer {
-  height: 50vh;
-  height: 50dvh;
-  width: 100vw;
-  width: 100dvw;
-  background-color: var(--primary-color);
-  position: relative;
-  margin-top: 60vh;
-}
-
-.footer-effect-image {
-  width: 100vw;
-  position: absolute;
-  top: -30vw;
-  left: 0;
-}
-
-.footer-section {
-  gap: var(--spacing-300);
-  padding: 0 var(--spacing-500);
-  justify-content: space-around;
-}
-
-.footer-contact {
-  max-width: 50ch;
-}
-address {
-  display: grid;
-  padding: var(--spacing-500) var(--spacing-100);
-  gap: var(--spacing-300);
-}
-
-.contact-link {
-  font-size: var(--font-100);
-  font-weight: 400;
-  justify-content: flex-start;
-  gap: var(--spacing-300);
-  max-width: 37ch;
-}
-
-.contact-link svg {
-}
-
 .transform-down {
   transform: translateY(10%);
 }
 
 .transform-up {
   transform: translateY(-10%);
-}
-
-.contact-views {
-  display: grid;
-  place-content: flex-end;
-  place-items: center;
-  place-self: center;
-  gap: var(--spacing-300);
-  max-height: 40vh;
-}
-
-#form {
-  max-width: 450px;
-  max-height: 300px;
-  width: 450px;
-  height: 300px;
-}
-
-.submit-button {
-  position: absolute;
-  margin-top: 6.5rem;
-  margin-left: var(--spacing-100);
-}
-
-.map {
-  width: 450px;
-  height: 300px;
-  border-radius: var(--radius-300);
-  overflow: hidden;
-  box-shadow: var(--box-shadow-500);
-  opacity: 0.9;
-}
-
-/* hide all aria-hidden="false" inside contact-views*/
-.contact-views *[aria-hidden="true"] {
-  display: none;
-}
-
-.contact-title {
-  font-size: var(--font-600);
-  font-weight: 800;
-  color: var(--primary-color-light);
-}
-
-.contact-description {
-  font-size: var(--font-100);
-  font-weight: 300;
-  color: var(--primary-color-light);
-  opacity: 0.8;
-}
-
-.contact-buttons {
-  display: flex;
-  gap: var(--spacing-300);
-  justify-content: center;
-  align-items: center;
-  place-content: center;
-  place-items: center;
-  place-self: center;
-}
-
-.switch {
-  background-color: var(--primary-color-light);
-  width: 30px;
-  height: 10px;
-  border-radius: var(--radius-200);
-  padding: 0;
-  margin: 0;
-  transition: all 0.5s ease;
-}
-
-.switch[active="false"] {
-  width: 10px;
-  opacity: 0.8;
 }
 
 /* ?  Screens */
@@ -1189,6 +1076,9 @@ address {
 
 /* * Tablets and Mobile  */
 @media (max-width: 65em) {
+  .mobile-hidden {
+    display: none;
+  }
   .skip-nav {
     display: none !important;
   }
@@ -1261,32 +1151,6 @@ address {
   .main-menu[data-visible="true"] {
     display: grid;
   }
-  footer.main-footer {
-    height: 80vh;
-    height: 80dvh;
-    width: 100vw;
-    width: 100dvw;
-    background-color: var(--primary-color);
-    position: relative;
-    margin-top: 60vh;
-  }
-  .footer-section {
-    flex-wrap: wrap;
-    place-content: center;
-    place-items: center;
-    place-self: center;
-    max-width: 99vw;
-  }
-  #form {
-    overflow: hidden;
-    width: 350px;
-    height: 250px;
-  }
-
-  .map {
-    width: 350px;
-    height: 250px;
-  }
 }
 
 /* ? Hover Support  */
@@ -1344,20 +1208,6 @@ address {
     background-color: var(--primary-color-light);
     color: var(--primary-color);
     fill: var(--primary-color);
-  }
-  .switch:hover {
-    opacity: 1;
-  }
-  .svg-link:hover {
-    fill: var(--primary-color-light);
-    stroke: var(--primary-color-light);
-    transform: scale(1.1);
-  }
-  .contact-link:hover svg {
-    stroke: var(--primary-color-dark);
-  }
-  .contact-link:hover {
-    color: var(--primary-color-dark);
   }
   ::-webkit-scrollbar-thumb:hover {
     background-color: #797369;
@@ -1419,39 +1269,4 @@ address {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
-}
-
-*[visible="false"] {
-  display: none;
-}
-
-.send-button {
-  z-index: var(--above-layer);
-  position: absolute;
-  bottom: 25px;
-  right: 20px;
-  width: var(--icon-300);
-  height: var(--icon-300);
-  display: grid;
-  place-content: center;
-  place-items: center;
-  place-self: center;
-  border-radius: 50%;
-  padding: 0;
-  transform: scale(1.2);
-}
-
-.send-button:hover {
-  background-color: transparent;
-  border: none;
-  transform: scale(1.3);
-}
-.send-button svg {
-  transition: all 0.5s ease;
-  width: var(--icon-300);
-  height: var(--icon-300);
-}
-.send-button:hover svg {
-  fill: var(--primary-color-light);
-  stroke: var(--primary-color-light);
 }
