@@ -419,9 +419,3 @@
   fill: var(--primary-color-light);
   margin: var(--spacing-400) 0;
 }
-
-.section {
-  height: 100vh;
-  height: 100dvh;
-  align-content: center;
-}
