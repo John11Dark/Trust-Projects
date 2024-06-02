@@ -123,7 +123,8 @@ main {
 
 .we-do-content {
   text-align: left;
-  max-width: 40ch;
+  max-width: 60ch;
+  height: 450px;
   background-color: var(--primary-color-opacity-10);
   padding: var(--spacing-500);
   border-radius: var(--radius-300);
@@ -379,6 +380,12 @@ address {
 }
 
 @media (max-width: 65em) {
+  .section {
+    margin-top: var(--spacing-400);
+  }
+  .we-do-content-container {
+    padding: 0;
+  }
   footer .contact-title {
     font-size: var(--font-500);
   }
