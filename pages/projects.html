@@ -25,7 +25,7 @@
 
     <!-- * Icon -->
     <link rel="shortcut icon" href="/assets/favicon.png" type="image/x-icon" />
-    <link rel="apple-touch-startup-image" href="./assets/favicon.png">
+    <link rel="apple-touch-startup-image" href="/assets/favicon.png">
     <link rel="apple-touch-icon" href="/assets/favicon.png">
 
     <!-- * Title -->
@@ -100,7 +100,6 @@
         </symbol>
       </svg>
 
-
       <!-- SEND  id="WHATSAPPICON" -->
       <svg class="svg-icon">
         <symbol width="22" height="22" viewBox="0 0 22 22" fill="none" id="SEND-ICON"
@@ -115,25 +114,6 @@
 
   <body isObserving="true" single-page-layout="false">
 
-    <!-- ? Skip header and navigation bar -->
-    <button tabindex="1" aria-hidden="false" aria-label="skip navigation bar" title="skip navigation bar"
-      href="#mainContent" id="skipNavLink" class="skip-nav | clickable" type="button">
-      skip navigation bar
-    </button>
-
-    <!--  ? Orientation Message  -->
-    <p class="orientation-message" aria-hidden="true" aria-label="Sorry, landscape orientation is not supported"
-      role="alert">
-      Currently, landscape orientation is not supported on this website.
-    </p>
-
-    <!-- ? Go to top button -->
-    <a type="button" role="button" class="go-up-button | clickable" visible="false" href="#" name="top"
-      title="go to top">
-      <svg class="sm-svg">
-        <use xlink:href="#ARROW-ICON"></use>
-      </svg>
-    </a>
 
     <!-- ? Page header -->
     <header isIntersecting="false" class="primary-header | flex">
@@ -178,9 +158,7 @@
         <video class="hero-video" autoplay muted loop playsinline>
           <source src="../assets/hero-video.mp4" type="video/mp4">
         </video>
-        <article class="hero-content">
-          <h1 class="hero-title">Everything Should START <br> WITH TRUST.</h1>
-        </article>
+        <h1 class="hero-title">You.Us.<br>It all starts with Trust.</h1>
       </section>
 
     </main>
@@ -195,42 +173,42 @@
         <article class="footer-contact">
           <h2 class="contact-title">Get in Touch</h2>
           <p class="contact-description">
-            Whether you'd like to visit us in person or send a message, we're here to help. Our office location is
-            displayed on the map below for your convenience. You can also reach out to us by filling out the form
+            Whether you'd like to visit us in person or send us a message, we're here to help. For your convenience, our
+            office location is displayed on the map below. You can also reach out to us by filling out the form
             provided. We look forward to connecting with you!
           </p>
+
           <address class="contact-address">
-            <a class="contact-link | flex | color-light" href="mailto:info@trustpeojects.com.mt">
+            <a class="contact-link | flex | color-light" href="mailto:info@trustprojects.com.mt">
               <svg class="sm-svg | transform-down">
                 <use xlink:href="#MAIL-ICON"></use>
               </svg>
-              <span>
-                info@trustpeojects.com.mt
+              <span class="mobile-hidden">
+                info@trustprojects.com.mt
               </span>
             </a>
-            <a class="contact-link | flex | color-light" href="tel:+356 12345678">
+            <a class="contact-link | flex | color-light" href="tel:+35677146264">
               <svg class="sm-svg | transform-up">
                 <use xlink:href="#CALL-ICON"></use>
               </svg>
-              <span>
-                +356 | 77146264
+              <span class="mobile-hidden">
+                +356 77146264
               </span>
             </a>
             <a class="contact-link | flex | color-light" href="https://maps.app.goo.gl/GewFwpisZd3vuhnF8">
               <svg class="sm-svg | transform-up">
                 <use xlink:href="#MAP-ICON"></use>
               </svg>
-              <span>
+              <span class="mobile-hidden">
                 16 Triq It-Torri, Il-Mosta MST 3500, Malta
               </span>
             </a>
           </address>
         </article>
 
-
         <article class="contact-views">
           <section class="content-views-section | flex">
-            <form id="form" class="contact-form | relative" method="post" aria-hidden="false">
+            <form id="form" class="contact-form | relative" method="post" aria-hidden="false" visible="true">
               <div class="field-group">
 
                 <div class="field-container">
@@ -243,7 +221,7 @@
                   <label for="number" class="field-label">Number</label>
                   <input type="tel" id="number" class="input-field" required aria-label="Your Number"
                     aria-required="true" autocomplete="tel" pattern="^\+(?:[0-9] ?){6,14}[0-9]$" minlength="8"
-                    maxlength="8" />
+                    maxlength="15" />
                 </div>
               </div>
 
@@ -260,7 +238,7 @@
                   aria-required="true"></textarea>
               </div>
               <button type="submit" title="Send message" aria-label="Send message"
-                class="pressable | send-button | absloute">
+                class="pressable | send-button | absolute">
                 <svg class="sm-svg | transform-up | color-primary">
                   <use xlink:href="#SEND-ICON"></use>
                 </svg>
@@ -268,20 +246,19 @@
             </form>
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3232.4340058178745!2d14.481360426481508!3d35.88738482252146!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x130e5aa55291021b%3A0x26780906f0dd1871!2sTop%20Choice%20Electronics%20%26%20Appliances!5e0!3m2!1sen!2smt!4v1714440537221!5m2!1sen!2smt"
-              width="400" height="300" class="map" allowfullscreen="" loading="lazy" id="map" aria-hidden="true"
+              class="map" loading="lazy" id="map" aria-hidden="true" visible="false"
               referrerpolicy="no-referrer-when-downgrade"></iframe>
           </section>
           <div class="contact-buttons | flex">
-
             <button type="button" class="switch" title="send email" aria-label="send email" aria-controls="form"
-              aria-expanded="true" aria-haspopup="true" active="true" />
+              aria-expanded="true" aria-haspopup="true" active="true"></button>
             <button type="button" class="switch" title="view map" aria-label="view map" aria-controls="map"
-              aria-expanded="false" aria-haspopup="true" active="false" />
+              aria-expanded="false" aria-haspopup="true" active="false"></button>
           </div>
-
         </article>
       </section>
     </footer>
+
   </body>
 
 </html>
