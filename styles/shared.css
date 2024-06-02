@@ -388,12 +388,7 @@
     transform: scale(1.2);
     display: none;
   }
-  form {
-    grid-column: 1;
-    grid-row: 2;
-    height: 110%;
-    margin-bottom: 1em;
-  }
+
   .input-field {
     font-size: calc(1vw + 1vh + 0.25rem);
   }
