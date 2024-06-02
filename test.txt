@@ -278,3 +278,55 @@
   </body>
 
 </html>
+
+
+      <!-- * Benefits of choosing us! Section -->
+
+      <section class="choosing-us | section | | grid | padding-600 | spacing-600">
+        <h2 class="choosing-us-title | section-title">Benefits of choosing us!</h2>
+
+        <div
+          class="choosing-us-content-container | grid-columns | spacing-600 | margin-top-400 | snaps-inline | overflow-x-visible | padding-600">
+          <article class="choosing-contnet | snap-element">
+            <h3 class="choosing-contnet-title | color-primary">
+              01. <br>
+              Lorem ipsum
+            </h3>
+            <p class="choosing-contnet-description">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod. Quisquam, quod. Quisquam, quod.
+            </p>
+          </article>
+
+          <article class="choosing-contnet | snap-element">
+            <h3 class="choosing-contnet-title | color-primary">
+              02. <br>
+              Lorem ipsum
+            </h3>
+            <p class="choosing-contnet-description">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod. Quisquam, quod. Quisquam, quod.
+            </p>
+          </article>
+
+          <article class="choosing-contnet | snap-element">
+
+            <h3 class="choosing-contnet-title | color-primary">
+              03. <br>
+              Lorem ipsum
+            </h3>
+            <p class="choosing-contnet-description">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod. Quisquam, quod. Quisquam, quod.
+            </p>
+          </article>
+
+          <article class="choosing-contnet | snap-element">
+
+            <h3 class="choosing-contnet-title | color-primary">
+              04. <br>
+              Lorem ipsum
+            </h3>
+            <p class="choosing-contnet-description">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod. Quisquam, quod. Quisquam, quod.
+            </p>
+          </article>
+        </div>
+      </section>
