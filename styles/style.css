@@ -1300,7 +1300,7 @@ main {
 
 /* ?  Orientation */
 
-@media (max-width: 65em) and (orientation: landscape) and (hover: none) {
+/* @media (max-width: 65em) and (orientation: landscape) and (hover: none) {
   *,
   *::before,
   *::after {
@@ -1321,7 +1321,7 @@ main {
     text-align: center;
     margin-top: 2em;
   }
-}
+} */
 
 /* ? Animation */
 
