@@ -329,7 +329,6 @@
 }
 .message-field {
   min-height: 150px;
-  max-height: 150px;
   height: 100%;
 }
 .message .field-label {
