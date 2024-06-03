@@ -43,8 +43,8 @@ const today = new Date();
 const config = { rootMargin: "0px 0px 100px 0px" };
 const topObserverConfig = { rootMargin: "0px 0px 0px 0px" };
 let beforeScrollTop = 0;
-const accentColor = "#000000";
-let tileColor = "#282e2e";
+const accentColor = "#313636";
+let tileColor = "#313636";
 
 // ? * --> DOM Elements
 const header = document.querySelector("header");
