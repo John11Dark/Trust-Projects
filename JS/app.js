@@ -109,6 +109,50 @@ const headerObserver = new IntersectionObserver((entries) => {
 // }
 
 // tab indicator
+const choosingUsListParent = document.querySelector(
+  ".choosing-us-content-container"
+);
+const ChoosingUsIndicatorsList = document.querySelectorAll(
+  ".choosing-card-indicator"
+);
+
+const ChoosingUsListElements = document.querySelectorAll(".choosing-content");
+
+const observer = new IntersectionObserver((e) => {
+  e.forEach(({ isIntersecting, target }) => {
+    isSlideObserving(
+      isIntersecting,
+      target,
+      "choosing-content",
+      ChoosingUsIndicatorsList
+    );
+  });
+}, config);
+
+/**
+ * Brief description about is slide observing.
+ * @summary ...
+ * @param {Boolean} isIntersecting
+ * @param {Int} index
+ * @param {String} elementName
+ * @param {Array} indicatorsList
+ * @returns {Boolean}
+ */
+function isSlideObserving(isIntersecting, target, elementName, indicatorsList) {
+  const isObserving = target.getAttribute("isObserving");
+  const currentSlide = document.querySelector(
+    `.${elementName}[isObserving="true"]`
+  );
+  const activeIndicator = parseInt(currentSlide.getAttribute("index"));
+  if (isObserving === "true") return;
+  else if (isIntersecting === true && isObserving === "false") {
+    const targetIndex = parseInt(target.getAttribute("index"));
+    currentSlide.setAttribute("isObserving", false);
+    target.setAttribute("isObserving", true);
+    indicatorsList[activeIndicator].setAttribute("active", false);
+    indicatorsList[targetIndex].setAttribute("active", true);
+  }
+}
 
 function tabListIndicators(indicator, index, list) {
   {
@@ -123,6 +167,20 @@ function tabListIndicators(indicator, index, list) {
       });
     }
   }
+}
+
+ChoosingUsIndicatorsList.forEach((indicator, index) => {
+  indicator.addEventListener("pointerdown", () =>
+    tabListIndicators(indicator, index, ChoosingUsListElements)
+  );
+});
+
+if (choosingUsListParent) {
+  choosingUsListParent.addEventListener("scroll", () => {
+    ChoosingUsListElements.forEach((element) => {
+      observer.observe(element);
+    });
+  });
 }
 
 // ? * --> Event Listeners
@@ -395,5 +453,5 @@ async function clientFetch() {
   }
 }
 
-const data = await clientFetch();
-console.log("data", data);
+// const data = await clientFetch();
+// console.log("data", data);
