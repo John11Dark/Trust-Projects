@@ -165,6 +165,7 @@
     --font-link: calc(1vw + 1vh + 1rem);
     --icon-800: 80px;
     --icon-900: 90px;
+    --font-600: calc(1vmax + 0.5vw + 0.5vh + 12px);
   }
 }
 
