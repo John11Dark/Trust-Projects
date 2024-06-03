@@ -36,6 +36,7 @@
   <link rel="stylesheet" href="../styles/shared.css" />
   <link rel="stylesheet" href="../styles/contact.css" />
   <link rel="stylesheet" href="../styles/keyframes.css">
+  <link rel="stylesheet" href="../styles/home.css">
 
 
   <!-- * JavaScript links -->
@@ -155,26 +156,6 @@
 
   <body>
 
-    <!-- ? Skip header and navigation bar -->
-    <button tabindex="1" aria-hidden="false" aria-label="skip navigation bar" title="skip navigation bar"
-      href="#mainContent" id="skipNavLink" class="skip-nav | clickable" type="button">
-      skip navigation bar
-    </button>
-
-    <!--  ? Orientation Message  -->
-    <p class="orientation-message" aria-hidden="true" aria-label="Sorry, landscape orientation is not supported"
-      role="alert">
-      Currently, landscape orientation is not supported on this website.
-    </p>
-
-    <!-- ? Go to top button -->
-    <a type="button" role="button" class="go-up-button | clickable" visible="false" href="#" name="top"
-      title="go to top">
-      <svg class="sm-svg">
-        <use xlink:href="#ARROW-ICON"></use>
-      </svg>
-    </a>
-
     <!-- ? Page header -->
     <header isIntersecting="false" class="primary-header | flex">
 
@@ -214,7 +195,7 @@
     <main id="main">
 
       <!-- * Contact section -->
-      <section class="contact | section | flex">
+      <section class="contact | section | flex | center | padding-600 | spacing-300 | max-height-100">
         <article class="contact-content">
           <h1 class="contact-title | section-title">Let's Get in <br> Touch.</h1>
           <p class="contact-description | section-description">
@@ -222,25 +203,6 @@
             displayed on the map below for your convenience. You can also reach out to us by filling out the form
             provided. We look forward to connecting with you!
           </p>
-
-          <div class="flex | spacing-200">
-            <button id="mapButton" class="svg | outline" title="View Location On google" aria-label="See location"
-              type="button">
-              <span>Location</span>
-              <svg class="sm-svg">
-                <use xlink:href="#MAP-ICON"></use>
-              </svg>
-            </button>
-            <button id="sendMessageBtn" class="svg | fill" title="Send a message" aria-label="Send a message"
-              type="button">
-
-              <span>Contact</span>
-              <svg class="sm-svg">
-                <use xlink:href="#SEND-ICON"></use>
-              </svg>
-            </button>
-
-          </div>
           <address class="contact-address | left-contact">
 
             <ul role="list" aria-label="social links list" class="social-links-list | flex | color-primary">
@@ -299,117 +261,58 @@
         </article>
 
         <article class="contact-views">
-          <img class="contact-image" id="contactImage" aria-hidden="false" aria-label="Trust Projects"
-            alt="Trust Projects" src="../assets/contact.png" alt="Trust Projects office building" />
+          <section class="content-views-section | flex">
+            <form id="form" class="contact-form | relative" method="post" aria-hidden="false" visible="true">
+              <div class="field-group">
 
-          <form id="form" class="contact-form | relative" method="post" aria-hidden="true" hidden>
-            <div class="field-group">
+                <div class="field-container">
+                  <label for="name" class="field-label">Name</label>
+                  <input type="text" id="name" class="input-field" required aria-label="Your name" aria-required="true"
+                    autocomplete="name" minlength="2" maxlength="50" />
+                </div>
 
-              <div class="field-container">
-                <label for="name" class="field-label">Name</label>
-                <input type="text" id="name" name="name" class="input-field" required aria-label="Your name"
-                  aria-required="true" autocomplete="name" pattern="[a-zA-Z]{2,}" minlength="2" maxlength="50" />
-
+                <div class="field-container">
+                  <label for="number" class="field-label">Number</label>
+                  <input type="tel" id="number" class="input-field" required aria-label="Your Number"
+                    aria-required="true" autocomplete="tel" pattern="^\+(?:[0-9] ?){6,14}[0-9]$" minlength="8"
+                    maxlength="15" />
+                </div>
               </div>
 
               <div class="field-container">
-                <label for="number" class="field-label">Number</label>
-                <input number-input type="tel" id="number" name="number" inputmode="numeric" class="input-field"
-                  required aria-label="Your Number" aria-required="true" autocomplete="tel" pattern="[0-9]+"
-                  minlength="8" />
+                <label for="email" class="field-label">Email</label>
+                <input type="email" autocomplete="email" autocorrect="off" spellcheck="false" id="email"
+                  class="input-field | email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                  aria-label="Your Email" aria-required="true" minlength="5" maxlength="50" />
               </div>
-            </div>
 
-            <div class="field-container">
-              <label for="email" class="field-label">Email</label>
-              <input type="email" name="email" autocomplete="email" autocorrect="off" spellcheck="false" id="email"
-                class="input-field | email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
-                aria-label="Your Email" aria-required="true" minlength="5" maxlength="50" />
-            </div>
+              <div class="field-container | message">
+                <label for="message" class="field-label">Message</label>
+                <textarea id="message" class="input-field | message-field" required aria-label="Your Message"
+                  aria-required="true"></textarea>
+              </div>
+              <button type="submit" title="Send message" aria-label="Send message"
+                class="pressable | send-button | absolute">
+                <svg class="sm-svg | transform-up | color-primary">
+                  <use xlink:href="#SEND-ICON"></use>
+                </svg>
+              </button>
+            </form>
 
-            <div class="field-container | message">
-              <label for="message" class="field-label">Message</label>
-              <textarea name="message" id="message" class="input-field | message-field" required
-                aria-label="Your Message" aria-required="true"></textarea>
-            </div>
-
-            <button type="submit" class="submit-button | fill | svg | absolute" aria-label="Send message"
-              title="Send message">
-              <svg class="sm-svg">
-                <use xlink:href="#SEND-ICON"></use>
-              </svg>
-            </button>
-          </form>
-
-
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3232.4340058178745!2d14.481360426481508!3d35.88738482252146!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x130e5aa55291021b%3A0x26780906f0dd1871!2sTop%20Choice%20Electronics%20%26%20Appliances!5e0!3m2!1sen!2smt!4v1714440537221!5m2!1sen!2smt"
-            width="400" height="300" class="map" allowfullscreen="" loading="lazy" id="map" aria-hidden="true" hidden
-            referrerpolicy="no-referrer-when-downgrade"></iframe>
-
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3231.553926788553!2d14.425565976482309!3d35.908939272514644!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x130e4f51c5fa085f%3A0xda366a987b85d202!2sTrust%20Projects!5e0!3m2!1sen!2smt!4v1717383045705!5m2!1sen!2smt"
+              class="map" loading="lazy" id="map" aria-hidden="true" visible="false"
+              referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </section>
+          <div class="contact-buttons | flex">
+            <button type="button" class="switch" title="send email" aria-label="send email" aria-controls="form"
+              aria-expanded="true" aria-haspopup="true" active="true"></button>
+            <button type="button" class="switch" title="view map" aria-label="view map" aria-controls="map"
+              aria-expanded="false" aria-haspopup="true" active="false"></button>
+          </div>
         </article>
-
-        <address class="contact-address | right-contact">
-
-          <ul role="list" aria-label="social links list" class="social-links-list | flex | color-primary">
-            <li class="contents">
-              <a rel="noopener noreferrer" class="svg-link | clickable" target="_blank" href="tel:+35677146264"
-                title="Give us a call">
-                <svg class="svg-icon | md-svg">
-                  <use xlink:href="#CALL-ICON"></use>
-                </svg>
-              </a>
-            </li>
-
-            <li class="contents">
-              <a rel="noopener noreferrer" class="svg-link | clickable" target="_blank"
-                href="https://maps.app.goo.gl/GewFwpisZd3vuhnF8" title="Find Location On Google">
-                <svg class="svg-icon | md-svg">
-                  <use xlink:href="#MAP-ICON"></use>
-                </svg>
-              </a>
-              <a aria-label="Email" class="svg-link | clickable" title="Email us on our official email!"
-                href="mailto:info@trustpeojects.com.mt">
-                <svg class="svg-icon | md-svg | transform-down">
-                  <use xlink:href="#MAIL-ICON"></use>
-                </svg>
-              </a>
-            </li>
-
-            <li class="contents">
-              <a rel="noopener noreferrer" class="svg-link | clickable" target="_blank" aria-label="Facebook"
-                title="Trust Projects Facebook account" href="https://www.facebook.com/">
-                <svg aria-hidden="true" class="svg-icon | md-svg | Facebook">
-                  <use xlink:href="#FACEBOOKICON"></use>
-                </svg>
-              </a>
-            </li>
-            <li class="contents">
-              <a rel="noopener noreferrer" class="svg-link | clickable" target="_blank" aria-label="X Platform(Twitter)"
-                title="Trust Projects X (twitter) account" href="https://twitter.com/">
-                <svg aria-hidden="true" class="svg-icon | md-svg | twitter">
-                  <use xlink:href="#TWITTERICON"></use>
-                </svg>
-              </a>
-            </li>
-            <li class="contents">
-              <a rel="noopener noreferrer" class="svg-link | clickable" target="_blank" area-label="WhatsApp"
-                title="Trust Projects on WhatsApp" href="https://api.whatsapp.com/send?phone=35677146264">
-                <svg aria-hidden="true" class="svg-icon | md-svg | Whatsapp">
-                  <use xlink:href="#WHATSAPPICON"></use>
-                </svg>
-              </a>
-            </li>
-          </ul>
-        </address>
       </section>
-
     </main>
-
-    <!-- ? Footer -->
-    <footer class="contact-footer | copy-right">
-      <p class="footer-text">© 2021 Trust Projects. All rights reserved.</p>
-    </footer>
   </body>
 
 </html>
