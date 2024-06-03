@@ -128,6 +128,7 @@ main {
 .we-do-content {
   text-align: left;
   max-width: 60ch;
+  width: 30ch;
   height: 450px;
   background-color: var(--primary-color-opacity-10);
   padding: var(--spacing-500);
@@ -136,6 +137,13 @@ main {
   place-items: center;
   place-self: center;
   text-align: center;
+}
+
+.we-do-content-container:last-child {
+  background-color: red;
+}
+.we-do-list-indicators {
+  bottom: -30px;
 }
 
 /* * Choosing Us Section */
