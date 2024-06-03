@@ -52,6 +52,9 @@ footer {
   display: grid;
 }
 @media (max-width: 65em) {
+  .contact-title {
+    font-size: var(--font-700);
+  }
   .contact.section {
     height: auto;
     max-height: none;
