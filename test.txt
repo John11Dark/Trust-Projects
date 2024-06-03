@@ -288,36 +288,6 @@
 
 
 
-      <!-- * Portfolio Section -->
-
-      <section class="portfolio | section padding-600">
-        <div class="flex | spacing-200">
-          <h2 class="portfolio-title | section-title">Portfolio</h2>
-          <a class="pressable | color-light" title="View all projects" href="./pages/projects.html">
-            <svg class="md-svg | margin-bottom-200 | margin-left-200">
-              <use xlink:href="#LINK-ICON"></use>
-            </svg>
-          </a>
-        </div>
-        <p class="portfolio-description | section-description">
-          We build. We fit-out. We project manage. Explore our diverse range of completed projects that showcase our
-          commitment to quality and excellence. Each project reflects our dedication to bringing our clients' visions to
-          life, demonstrating our expertise across various industries.
-        </p>
-
-        <div class="projects-content-container | flex | spacing-200 | center">
-          <article class="project">
-            <img src="./assets/image-1.jpg" alt="Project 1" class="project-image">
-            <h3 class="project-title">Project 1</h3>
-            <a class="button-link | animate | outline-link | project-button" href="./pages/projects.html#1">
-              View Project
-            </a>
-          </article>
-        </div>
-        <button class="view-all-button | animate | fill" title="View all projects" href="./pages/projects.html">
-          View all projects
-        </button>
-      </section>
 
 
 
@@ -518,4 +488,68 @@
           </article>
 
         </div>
+      </section>
+
+      
+      <!-- * Benefits of choosing us! Section -->
+      <section class="choosing-us | section | grid | spacing-600">
+        <h2 class="choosing-us-title | section-title">Benefits of Choosing Us!</h2>
+
+        <article class="choosing-us-content-parent | snaps-inline-parent-container">
+          <ol class="choosing-us-content-container | grid-columns | spacing-600 | snaps-inline | overflow-x-visible">
+            <li index="0" id="Expert" class="choosing-content | snap-element" isObserving="true" role="listitem">
+              <h3 class="choosing-content-title | color-primary">
+                01. <br>
+                Expert Craftsmanship
+              </h3>
+              <p class="choosing-content-description">
+                Our team of experienced professionals is dedicated to delivering the highest quality workmanship on
+                every project, ensuring that your vision is brought to life with precision and care.
+              </p>
+            </li>
+            <li index="1" id="Comprehensive" class="choosing-content | snap-element" isObserving="false"
+              role="listitem">
+              <h3 class="choosing-content-title | color-primary">
+                02. <br>
+                Comprehensive Services
+              </h3>
+              <p class="choosing-content-description">
+                From initial planning and design to final construction and finishing touches, we offer a full range of
+                services to meet all your project needs under one roof.
+              </p>
+            </li>
+            <li index="2" id="Client" class="choosing-content | snap-element" isObserving="false" role="listitem">
+              <h3 class="choosing-content-title | color-primary">
+                03. <br>
+                Client-Centered Approach
+              </h3>
+              <p class="choosing-content-description">
+                We prioritize your satisfaction by maintaining clear communication and tailoring our services to your
+                specific requirements, ensuring a seamless and stress-free experience.
+              </p>
+            </li>
+            <li index="3" id="Delivery" class="choosing-content | snap-element" isObserving="false" role="listitem">
+              <h3 class="choosing-content-title | color-primary">
+                04. <br>
+                Timely Delivery
+              </h3>
+              <p class="choosing-content-description">
+                We understand the importance of deadlines and are committed to completing projects on time without
+                compromising on quality, so you can enjoy the results as planned.
+              </p>
+            </li>
+          </ol>
+
+          <ol class="choosing-us-list-indicators | indicators-list | center | absolute | spacing-300" role="list"
+            aria-hidden="true">
+            <li class="choosing-card-indicator | indicator" index="0" target="#Expert" active="true" role="button"
+              tabindex="0"></li>
+            <li class="choosing-card-indicator | indicator" index="1" target="#Comprehensive" active="false"
+              role="button" tabindex="0"></li>
+            <li class="choosing-card-indicator | indicator" index="2" target="#Client" active="false" role="button"
+              tabindex="0"></li>
+            <li class="choosing-card-indicator | indicator" index="3" target="#Delivery" active="false" role="button"
+              tabindex="0"></li>
+          </ol>
+        </article>
       </section>
