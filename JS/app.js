@@ -129,6 +129,17 @@ const observer = new IntersectionObserver((e) => {
   });
 }, config);
 
+const weDoObserver = new IntersectionObserver((e) => {
+  e.forEach(({ isIntersecting, target }) => {
+    isSlideObserving(
+      isIntersecting,
+      target,
+      "we-do-content",
+      weDoIndicatorsList
+    );
+  });
+}, config);
+
 /**
  * Brief description about is slide observing.
  * @summary ...
@@ -179,6 +190,24 @@ if (choosingUsListParent) {
   choosingUsListParent.addEventListener("scroll", () => {
     ChoosingUsListElements.forEach((element) => {
       observer.observe(element);
+    });
+  });
+}
+
+const weDoListParent = document.querySelector(".we-do-content-container");
+const weDoListElements = document.querySelectorAll(".we-do-content");
+const weDoIndicatorsList = document.querySelectorAll(".we-do-card-indicator");
+
+weDoIndicatorsList.forEach((indicator, index) => {
+  indicator.addEventListener("pointerdown", () =>
+    tabListIndicators(indicator, index, weDoListElements)
+  );
+});
+
+if (weDoListParent) {
+  weDoListParent.addEventListener("scroll", () => {
+    weDoListElements.forEach((element) => {
+      weDoObserver.observe(element);
     });
   });
 }
