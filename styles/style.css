@@ -520,6 +520,12 @@ keyword[attr="emoji"] {
   place-self: center;
 }
 
+.flex-end {
+  place-content: flex-end;
+  place-items: flex-end;
+  place-self: flex-end;
+}
+
 .space-between {
   justify-content: space-between;
 }
