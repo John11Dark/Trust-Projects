@@ -368,6 +368,15 @@ address {
   .contact-link:hover {
     color: var(--primary-color-dark);
   }
+  .send-button:hover {
+    background-color: transparent;
+    border: none;
+    transform: scale(1.3);
+  }
+  .send-button:hover svg {
+    fill: var(--primary-color-light);
+    stroke: var(--primary-color-light);
+  }
 }
 
 .send-button {
@@ -386,19 +395,10 @@ address {
   transform: scale(1.2);
 }
 
-.send-button:hover {
-  background-color: transparent;
-  border: none;
-  transform: scale(1.3);
-}
 .send-button svg {
   transition: all 0.5s ease;
   width: var(--icon-300);
   height: var(--icon-300);
-}
-.send-button:hover svg {
-  fill: var(--primary-color-light);
-  stroke: var(--primary-color-light);
 }
 
 @media (max-width: 65em) {
