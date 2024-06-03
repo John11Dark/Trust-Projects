@@ -4,6 +4,7 @@
   align-content: center;
   align-items: center;
   overflow: visible;
+  padding: var(--spacing-600);
 }
 
 main {
@@ -134,6 +135,27 @@ main {
   text-align: center;
 }
 
+/* * Choosing Us Section */
+.choosing-us.section {
+}
+
+.choosing-us-title {
+}
+
+.choosing-us-content-parent {
+}
+
+.choosing-us-content-container {
+}
+
+.choosing-content {
+}
+
+.choosing-content-title {
+}
+
+.choosing-content-description {
+}
 /* Portfolio Section */
 
 .projects-content-container {
@@ -382,6 +404,7 @@ address {
 @media (max-width: 65em) {
   .section {
     margin-top: var(--spacing-400);
+    padding: var(--spacing-400);
   }
   .we-do-content-container {
     padding: 0;
