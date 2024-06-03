@@ -73,7 +73,7 @@ main {
   font-weight: 400;
   color: var(--color-white);
   margin-bottom: var(--spacing-500);
-  max-width: 65ch;
+  max-width: 75ch;
 }
 /* * About Section */
 
@@ -157,15 +157,23 @@ main {
 .choosing-content-description {
 }
 /* Portfolio Section */
+.portfolio.section {
+}
+
+.portfolio-title {
+}
+
+.portfolio-content {
+}
 
 .projects-content-container {
   width: 100%;
-  height: 60vh;
-  height: 60dvh;
+  height: 40vh;
+  height: 40dvh;
 }
 
-.project {
-  width: 95vw;
+.project-card {
+  width: 100%;
   height: 100%;
   border-radius: 0.5rem;
   overflow: hidden;
@@ -173,7 +181,7 @@ main {
   position: relative;
 }
 
-.project::before {
+.project-card::before {
   content: "";
   position: absolute;
   top: 0;
@@ -187,11 +195,11 @@ main {
   transition: opacity 1s ease-in-out;
 }
 
-.project:hover .project-image {
+.project-card:hover .project-card-image {
   transform: scale(1.1);
 }
 
-.project:hover.project::before {
+.project-card:hover.project-card::before {
   opacity: 1;
 }
 
