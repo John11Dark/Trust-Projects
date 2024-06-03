@@ -212,7 +212,7 @@
 
 /* ? <--> Contact section <--> */
 
-.contact-section {
+/* .contact-section {
   display: grid;
   grid-template-columns: 50% 40%;
   height: 90vh;
@@ -222,7 +222,7 @@
   place-items: center;
   place-self: center;
   place-content: center;
-}
+} */
 
 .cos-article {
   grid-column: 1;
@@ -266,13 +266,13 @@
 }
 
 /*  */
-.contact-from {
+/* .contact-from {
   display: grid;
   place-content: center;
   place-items: center;
   place-self: center;
   background-color: red;
-}
+} */
 
 .field-group {
   display: grid;
@@ -372,13 +372,13 @@
   max-height: var(--icon-400);
 }
 @media (max-width: 65em) {
-  .contact-section {
+  /* .contact-section {
     display: flex;
     flex-direction: column;
     grid-template-columns: 100%;
     grid-template-rows: 10% 50% 25% 10%;
     min-height: 100vh;
-  }
+  } */
   .cos-title {
     grid-column: 1;
     grid-row: 1;
