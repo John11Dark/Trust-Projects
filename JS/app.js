@@ -351,10 +351,8 @@ if (closeContactPageButton) {
 const map = document.querySelector("#map");
 const contactButton = document.querySelector("#sendMessageBtn");
 const locationButton = document.querySelector("#mapButton");
-const contactIllustration = document.querySelector("#contactImage");
 
 locationButton?.addEventListener("pointerdown", () => {
-  contactIllustration.setAttribute("visible", false);
   contactForm.setAttribute("visible", false);
   map.setAttribute("visible", true);
   map.removeAttribute("hidden");
@@ -362,7 +360,6 @@ locationButton?.addEventListener("pointerdown", () => {
 });
 
 contactButton?.addEventListener("pointerdown", () => {
-  contactIllustration.setAttribute("visible", false);
   map.setAttribute("visible", false);
   contactForm.setAttribute("visible", true);
   contactForm.removeAttribute("hidden");
