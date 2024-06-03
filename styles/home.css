@@ -139,9 +139,6 @@ main {
   text-align: center;
 }
 
-.we-do-content-container:last-child {
-  background-color: red;
-}
 .we-do-list-indicators {
   bottom: -30px;
 }
