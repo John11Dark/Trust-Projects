@@ -278,18 +278,10 @@ navButton.addEventListener("pointerdown", () => {
     navButton.setAttribute("isToggled", true);
     menu.setAttribute("data-visible", true);
     menu.setAttribute("aria-expanded", true);
-    document.body.setAttribute("isObserving", false);
-    tileColorList.forEach((content) => {
-      content.setAttribute("content", accentColor);
-    });
   } else if (isExpanded === "true") {
     navButton.setAttribute("isToggled", false);
     menu.setAttribute("data-visible", false);
     menu.setAttribute("aria-expanded", false);
-    document.body.setAttribute("isObserving", true);
-    tileColorList.forEach((content) => {
-      content.setAttribute("content", tileColor);
-    });
   }
   // navigation Links animation
 
@@ -382,6 +374,17 @@ contactForm?.addEventListener("submit", async (e) => {
   const formData = new FormData(contactForm);
   const data = validateForm(formData);
   if (!data) alert("Please fill in all fields");
+  else {
+    // reset form
+    contactForm.reset();
+    if (inputFields) {
+      inputFields.forEach((inputField) => {
+        inputField.setAttribute("hasContent", false);
+      });
+    }
+
+    if (messageInputField) messageInputField.setAttribute("hasContent", false);
+  }
   // const response = await fetch("https://formspree.io/f/mnqoqzqz", {
   //   method: "POST",
   //   headers: {
