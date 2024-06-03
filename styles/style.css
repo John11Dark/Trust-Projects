@@ -422,21 +422,16 @@ svg {
   scroll-snap-align: start;
 }
 
-.indicatorsList {
-  width: 90%;
+.indicators-list {
+  width: 100%;
   height: 8px;
-  display: flex;
-  position: absolute;
-  gap: 1rem;
-  bottom: 0;
-  align-self: center;
-  justify-self: center;
-  align-items: center;
-  justify-content: center;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-55%);
   display: none;
 }
 
-.indicators {
+.indicator {
   width: 30px;
   height: 100%;
   background-color: var(--opacity-light-100);
@@ -446,13 +441,13 @@ svg {
   transform-origin: center;
 }
 
-.indicators[active="true"] {
+.indicator[active="true"] {
   transition-delay: 0.1s;
   background-color: var(--primary-color);
   transform: scale(1.2);
 }
 
-.indicators[active="false"] {
+.indicator[active="false"] {
   transition-delay: 0.15s;
 }
 
@@ -462,7 +457,8 @@ svg {
     display: grid;
     align-items: center;
     justify-content: center;
-    width: max(100%, 93vw);
+    width: 95vw;
+    gap: var(--spacing-300);
   }
   .snaps-inline {
     grid-auto-columns: 100% !important;
