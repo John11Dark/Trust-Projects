@@ -55,7 +55,7 @@
   </noscript>
 
   <!--  ? DOM Data and SVGs  -->
-  <data id="data-wrapper" aria-hidden="true" aria-expanded="false">
+  <data id="data-wrapper" aria-hidden="true" aria-expanded="false" aria-disabled="true">
     <datalist id="countriesCodeOptions">
     </datalist>
 
@@ -153,7 +153,7 @@
   </data>
   </head>
 
-  <body isObserving="false" single-page-layout="true">
+  <body>
 
     <!-- ? Skip header and navigation bar -->
     <button tabindex="1" aria-hidden="false" aria-label="skip navigation bar" title="skip navigation bar"
@@ -214,7 +214,7 @@
     <main id="main">
 
       <!-- * Contact section -->
-      <section class="contact-section | section | flex">
+      <section class="contact | section | flex">
         <article class="contact-content">
           <h1 class="contact-title | section-title">Let's Get in <br> Touch.</h1>
           <p class="contact-description | section-description">
@@ -241,7 +241,7 @@
             </button>
 
           </div>
-          <address class="contact-address">
+          <address class="contact-address | left-contact">
 
             <ul role="list" aria-label="social links list" class="social-links-list | flex | color-primary">
               <li class="contents">
@@ -297,6 +297,7 @@
           </address>
 
         </article>
+
         <article class="contact-views">
           <img class="contact-image" id="contactImage" aria-hidden="false" aria-label="Trust Projects"
             alt="Trust Projects" src="../assets/contact.png" alt="Trust Projects office building" />
@@ -347,12 +348,68 @@
             referrerpolicy="no-referrer-when-downgrade"></iframe>
 
         </article>
+
+        <address class="contact-address | right-contact">
+
+          <ul role="list" aria-label="social links list" class="social-links-list | flex | color-primary">
+            <li class="contents">
+              <a rel="noopener noreferrer" class="svg-link | clickable" target="_blank" href="tel:+35677146264"
+                title="Give us a call">
+                <svg class="svg-icon | md-svg">
+                  <use xlink:href="#CALL-ICON"></use>
+                </svg>
+              </a>
+            </li>
+
+            <li class="contents">
+              <a rel="noopener noreferrer" class="svg-link | clickable" target="_blank"
+                href="https://maps.app.goo.gl/GewFwpisZd3vuhnF8" title="Find Location On Google">
+                <svg class="svg-icon | md-svg">
+                  <use xlink:href="#MAP-ICON"></use>
+                </svg>
+              </a>
+              <a aria-label="Email" class="svg-link | clickable" title="Email us on our official email!"
+                href="mailto:info@trustpeojects.com.mt">
+                <svg class="svg-icon | md-svg | transform-down">
+                  <use xlink:href="#MAIL-ICON"></use>
+                </svg>
+              </a>
+            </li>
+
+            <li class="contents">
+              <a rel="noopener noreferrer" class="svg-link | clickable" target="_blank" aria-label="Facebook"
+                title="Trust Projects Facebook account" href="https://www.facebook.com/">
+                <svg aria-hidden="true" class="svg-icon | md-svg | Facebook">
+                  <use xlink:href="#FACEBOOKICON"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="contents">
+              <a rel="noopener noreferrer" class="svg-link | clickable" target="_blank" aria-label="X Platform(Twitter)"
+                title="Trust Projects X (twitter) account" href="https://twitter.com/">
+                <svg aria-hidden="true" class="svg-icon | md-svg | twitter">
+                  <use xlink:href="#TWITTERICON"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="contents">
+              <a rel="noopener noreferrer" class="svg-link | clickable" target="_blank" area-label="WhatsApp"
+                title="Trust Projects on WhatsApp" href="https://api.whatsapp.com/send?phone=35677146264">
+                <svg aria-hidden="true" class="svg-icon | md-svg | Whatsapp">
+                  <use xlink:href="#WHATSAPPICON"></use>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </address>
       </section>
 
     </main>
 
     <!-- ? Footer -->
-    <footer class="contact-footer | copy-right"></footer>
+    <footer class="contact-footer | copy-right">
+      <p class="footer-text">© 2021 Trust Projects. All rights reserved.</p>
+    </footer>
   </body>
 
 </html>
