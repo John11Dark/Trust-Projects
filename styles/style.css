@@ -1190,8 +1190,8 @@ main {
   /* * Menu button */
 
   .nav-button {
-    width: var(--icon-900);
-    height: var(--icon-900);
+    width: var(--icon-500);
+    height: var(--icon-500);
     border-radius: var(--radius-circle);
     display: grid;
     place-items: center;
