@@ -322,7 +322,11 @@ address {
   width: 450px;
   height: 320px;
 }
-
+.footer-contact {
+  max-height: 40dvh;
+  overflow: hidden;
+  /* TODO */
+}
 #form {
   width: 450px;
   height: 300px;
