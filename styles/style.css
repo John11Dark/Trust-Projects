@@ -6,6 +6,8 @@
 /* ? Custom Props */
 :root {
   /* * Colors  */
+  --color-white: #f4f5ef;
+  --color-black: #282e2e;
   --primary-color: #658280;
   --primary-color-opacity-90: #65828090;
   --primary-color-opacity-80: #65828080;
@@ -126,6 +128,7 @@
     --primary-color-dark: #282e2e;
     --primary-color-light: #f4f5ef;
     --background-color: #313636;
+    --background-color-50: #31363650;
     --surface-light: #e5dfc6;
     --surface-gray: #b4b3b1;
     --surface-grayish: #d8d6d1;
@@ -144,7 +147,8 @@
     --primary-color-light: #11100e;
     --opacity-dark-100: #11100ed7;
     --opacity-light-100: #141212c4;
-    --background-color: #fcf6db;
+    --background-color: #d2dad9;
+    --background-color-50: #d2dad950;
     --theme-shadow: #b9b5ab8a;
     --surface-light: #c9c2a6;
     --surface-gray: #b4b3b1;
@@ -877,6 +881,17 @@ keyword[attr="emoji"] {
   stroke: var(--primary-color-dark);
   color: var(--primary-color-dark);
 }
+.color-white {
+  fill: var(--color-white);
+  stroke: var(--color-white);
+  color: var(--color-white);
+}
+
+.color-black {
+  fill: var(--color-black);
+  stroke: var(--color-black);
+  color: var(--color-black);
+}
 
 .flip {
   transform: scaleX(-1);
@@ -1043,6 +1058,11 @@ header {
   overflow: hidden;
   background-color: transparent;
   padding: var(--spacing-500) 0;
+  animation: header linear forwards;
+  animation-timeline: view();
+  animation-range-start: 200vh;
+  animation-range-end: 220vh;
+  transition: all 0.5s ease;
 }
 
 header[isInteracting="true"] {
@@ -1069,10 +1089,10 @@ header[isInteracting="true"] {
 
 .links-list {
   display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  align-self: flex-end;
-  gap: var(--spacing-500);
+  place-content: center;
+  place-items: center;
+  place-self: center;
+  gap: var(--spacing-700);
 }
 
 .nav-button {
@@ -1095,41 +1115,6 @@ header[isInteracting="true"] {
   color: var(--primary-color);
   transform: scale(1);
   text-shadow: var(--shadow-accent-text);
-}
-
-.switchMode {
-  width: var(--icon-800);
-  height: var(--icon-800);
-  filter: drop-shadow(0 0 0.5em var(--theme-shadow));
-}
-
-.sections-navigation-aside {
-  z-index: var(--above-layer);
-  position: fixed;
-  top: 0;
-  right: 0;
-  height: 100dvh;
-  width: var(--spacing-500);
-  place-content: center;
-  place-items: center;
-  place-self: center;
-}
-
-.sections-navigation-link {
-  height: var(--icon-100);
-  width: var(--icon-100);
-  border-radius: var(--radius-rounded);
-  background-color: var(--primary-color);
-  margin: var(--spacing-300) auto;
-  opacity: 0.9;
-  transform: scale(0.8);
-  transition: var(--transition-300);
-}
-
-.sections-navigation-link:hover {
-  transform: scale(1.05);
-  background-color: var(--secondary-color);
-  opacity: 1;
 }
 
 main {
