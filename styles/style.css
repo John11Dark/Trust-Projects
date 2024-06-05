@@ -33,7 +33,7 @@
   --font-300: calc(0.5rem + 0.25vmax + 0.5vw + 0.5vh);
   --font-400: calc(0.5vw + 0.5vh + 0.75rem);
   --font-500: calc(0.5vw + 0.5vh + 0.75rem);
-  --font-600: calc(1vmax + 0.75vw + 15px + 0.5rem);
+  --font-600: calc(1vmax + 0.6vw + 15px);
   --font-700: calc(20px + 0.5vmax + 0.5rem + 0.5vw + 0.5vh + 0.5em + 10%);
   --font-800: calc(1.25vmax + 2rem + 0.75vw + 0.75vh);
   --font-900: calc(1.5vmax + 2rem + 1vw + 1vh);
