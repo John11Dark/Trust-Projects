@@ -17,6 +17,7 @@
     "defaults",
     "not ie 11",
     "not and_ff <= 115",
-    "not firefox <= 116"
+    "not firefox <= 116",
+    "not samsung <= 21"
   ]
 }
