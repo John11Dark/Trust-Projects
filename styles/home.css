@@ -283,6 +283,7 @@ footer.main-footer {
 
 .footer-contact {
   max-width: 55ch;
+  max-height: 35dvh;
 }
 
 address {
@@ -319,32 +320,25 @@ address {
   place-items: center;
   place-self: center;
   padding: var(--spacing-300);
-  width: 450px;
-  height: 320px;
-}
-.footer-contact {
-  max-height: 40dvh;
-  overflow: hidden;
-  /* TODO */
-}
-#form {
-  width: 450px;
-  height: 300px;
-}
-
-.submit-button {
-  position: absolute;
-  margin-top: 6.5rem;
-  margin-left: var(--spacing-100);
+  width: min(50vw, 450px);
+  height: 310px;
 }
 
 .map {
-  width: 450px;
-  height: 300px;
+  width: min(50vw, 450px);
+  height: 285px;
   border-radius: var(--radius-300);
-  overflow: hidden;
   box-shadow: var(--box-shadow-500);
   opacity: 0.9;
+}
+
+#form {
+  width: min(50vw, 450px);
+  height: 285px;
+}
+
+.message {
+  min-height: 155px;
 }
 
 .contact-buttons {
@@ -411,8 +405,8 @@ address {
 .send-button {
   z-index: var(--above-layer);
   position: absolute;
-  bottom: 25px;
-  right: 20px;
+  bottom: 15px;
+  right: 10px;
   width: var(--icon-300);
   height: var(--icon-300);
   display: grid;
@@ -430,7 +424,10 @@ address {
   height: var(--icon-300);
 }
 
-@media (max-width: 65em) {
+@media (max-width: 650px) {
+  .we-do-content {
+    width: 90vw;
+  }
   .section {
     margin-top: var(--spacing-400);
     padding: var(--spacing-400);
@@ -439,7 +436,7 @@ address {
     padding: 0;
   }
   footer .contact-title {
-    font-size: var(--font-500);
+    font-size: var(--font-600);
   }
 
   footer .contact-description {
@@ -472,17 +469,75 @@ address {
     max-width: none;
   }
   .contact-views {
-    width: 350px;
-    height: 320px;
+    width: 95vw;
+  }
+  .map {
+    width: 95vw;
+  }
+  #form {
+    width: 95vw;
+  }
+}
+
+@media (max-width: 650px) and (max-height: 950px) and (min-height: 750px) {
+  footer .contact-title {
+    font-size: var(--font-700);
   }
 
+  footer .contact-description {
+    font-size: 1.25rem;
+  }
+  .contact-views {
+    height: 45dvh;
+  }
+  .map {
+    height: 45dvh;
+  }
   #form {
-    width: 350px;
-    height: 300px;
+    height: 45dvh;
+  }
+  .message {
+    min-height: 30dvh;
+  }
+  .send-button {
+    right: 20px;
+  }
+}
+
+footer .contact-form {
+  height: 285px;
+  width: 100%;
+}
+
+@media (min-width: 1024px) and (max-height: 700px) {
+  footer.main-footer {
+    height: 50vh;
+    height: 50dvh;
+    margin-top: 50vh;
+    margin-top: 50dvh;
+  }
+  .field-container {
+    min-height: 50px;
+    max-height: 50px;
+  }
+  .contact-views {
+    height: 40dvh;
   }
 
   .map {
-    width: 350px;
-    height: 300px;
+    height: 35dvh;
+  }
+  #form {
+    height: 35dvh;
+  }
+  .message {
+    min-height: 15dvh;
+  }
+  .send-button {
+    right: 20px;
+  }
+  .contact-address {
+    padding: 0;
+    margin-top: var(--spacing-400);
   }
 }
