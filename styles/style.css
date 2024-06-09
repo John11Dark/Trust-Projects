@@ -416,10 +416,11 @@ svg {
 /* ? <-*-> horizontal scrollable container <-*-> */
 
 .overflow-x-visible {
-  overflow-x: auto;
-  width: 100%;
+  overflow-x: visible;
 }
 
+.snaps-inline-parent-container {
+}
 .snaps-inline {
   max-width: max(99%, 99vw);
   scroll-behavior: smooth;
@@ -526,7 +527,6 @@ keyword[attr="emoji"] {
 .grid-columns {
   display: grid;
   grid-auto-flow: column;
-  grid-auto-columns: 23%;
 }
 .center {
   place-content: center;
@@ -1045,9 +1045,11 @@ header[isInteracting="true"] {
 
 .link {
   transform: scale(0.9);
-  color: var(--surface-light);
+  color: #fff;
+  font-weight: 800;
   transition: var(--transition-300);
   transform-origin: center;
+  text-shadow: var(--shadow-accent-text);
 }
 
 .link[active="true"] {
