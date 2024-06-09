@@ -283,6 +283,7 @@ footer.main-footer {
 
 .footer-contact {
   max-width: 55ch;
+  max-height: 35dvh;
 }
 
 address {
@@ -319,32 +320,32 @@ address {
   place-items: center;
   place-self: center;
   padding: var(--spacing-300);
-  width: 450px;
-  height: 320px;
+  width: min(50vw, 450px);
+  height: 310px;
 }
-.footer-contact {
-  max-height: 40dvh;
+
+.map {
+  width: min(50vw, 450px);
+  height: 285px;
+  border-radius: var(--radius-300);
   overflow: hidden;
-  /* TODO */
+  box-shadow: var(--box-shadow-500);
+  opacity: 0.9;
 }
+
 #form {
-  width: 450px;
-  height: 300px;
+  width: min(50vw, 450px);
+  height: 285px;
+}
+
+.message {
+  min-height: 155px;
 }
 
 .submit-button {
   position: absolute;
   margin-top: 6.5rem;
   margin-left: var(--spacing-100);
-}
-
-.map {
-  width: 450px;
-  height: 300px;
-  border-radius: var(--radius-300);
-  overflow: hidden;
-  box-shadow: var(--box-shadow-500);
-  opacity: 0.9;
 }
 
 .contact-buttons {
@@ -411,8 +412,8 @@ address {
 .send-button {
   z-index: var(--above-layer);
   position: absolute;
-  bottom: 25px;
-  right: 20px;
+  bottom: 15px;
+  right: 10px;
   width: var(--icon-300);
   height: var(--icon-300);
   display: grid;
@@ -476,13 +477,17 @@ address {
     height: 320px;
   }
 
-  #form {
-    width: 350px;
-    height: 300px;
-  }
-
   .map {
     width: 350px;
     height: 300px;
   }
+}
+
+main {
+  display: none !important;
+}
+
+footer .contact-form {
+  height: 285px;
+  width: 100%;
 }
