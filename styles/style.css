@@ -419,10 +419,27 @@ svg {
   overflow-x: visible;
 }
 
+.overflow-x-auto {
+  overflow-x: auto;
+}
+
+.overflow-x-hidden {
+  overflow-x: hidden;
+}
+
+.overflow-x-unset {
+  overflow-x: unset;
+}
+
+.overflow-x-scroll {
+  overflow-x: scroll;
+}
+
 .snaps-inline-parent-container {
 }
 .snaps-inline {
-  max-width: max(99%, 99vw);
+  max-width: 95vw;
+  width: 95vw;
   scroll-behavior: smooth;
   overscroll-behavior-inline: contain;
   scroll-snap-type: inline mandatory;
