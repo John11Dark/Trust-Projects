@@ -158,6 +158,8 @@ main {
 }
 
 .choosing-content {
+  width: 30ch;
+  margin-inline: var(--spacing-200);
 }
 
 .choosing-content-title {
