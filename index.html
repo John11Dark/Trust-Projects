@@ -48,6 +48,7 @@
 
     <!-- * CSS Links -->
     <style data-merge-styles="true"></style>
+    <link href="https://api.mapbox.com/mapbox-gl-js/v3.4.0/mapbox-gl.css" rel="stylesheet">
     <link rel="stylesheet" href="./styles/style.css" media="print" onload="this.media='all'" />
     <link rel="stylesheet" href="./styles/shared.css" media="print" onload="this.media='all'" />
     <link rel="stylesheet" href="./styles/home.css" media="print" onload="this.media='all'" />
@@ -81,7 +82,10 @@
     <meta name="msvalidate.01" content="E90A49A456519BA15BFBF30C36D7BA3B" />
     <!-- * JavaScript links -->
 
+    <script src="https://api.mapbox.com/mapbox-gl-js/v3.4.0/mapbox-gl.js"></script>
+
     <script src="./JS/app.js" type="module" defer></script>
+
 
     <script type="application/ld+json">
       {
@@ -512,10 +516,12 @@
               </button>
             </form>
 
-            <iframe
+            <div id="map" aria-hidden="true" visible="false" class="map">
+            </div>
+            <!-- <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3231.553926788553!2d14.425565976482309!3d35.908939272514644!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x130e4f51c5fa085f%3A0xda366a987b85d202!2sTrust%20Projects!5e0!3m2!1sen!2smt!4v1717383045705!5m2!1sen!2smt"
               class="map" loading="lazy" id="map" aria-hidden="true" visible="false"
-              referrerpolicy="no-referrer-when-downgrade"></iframe>
+              referrerpolicy="no-referrer-when-downgrade"></iframe> -->
           </section>
           <div class="contact-buttons | flex">
             <button type="button" class="switch" title="send email" aria-label="send email" aria-controls="form"
