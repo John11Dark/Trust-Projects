@@ -484,3 +484,25 @@ async function clientFetch() {
 
 // const data = await clientFetch();
 // console.log("data", data);
+
+// mapboxgl.accessToken ="";
+// const MapBoxInstance = new mapboxgl.Map({
+//   container: "map",
+//   // Choose from Mapbox's core styles, or make your own style with Mapbox Studio
+//   style: "mapbox://styles/mapbox/dark-v11",
+//   center: [35.92435628878943, 14.395761987151309],
+//   zoom: 10,
+//   pitch: 45,
+//   bearing: -17.6,
+//   accentColor: accentColor,
+// });
+
+// const MarkerPopUp = new mapboxgl.Popup({ offset: 25 }).setText(
+//   "Trust Projects"
+// );
+
+// // Create a default Marker and add it to the map.
+// const TrustProjectsMarker = new mapboxgl.Marker()
+//   .setLngLat([35.9090783095469, 14.42816235462325])
+//   .setPopup(MarkerPopUp)
+//   .addTo(MapBoxInstance);
