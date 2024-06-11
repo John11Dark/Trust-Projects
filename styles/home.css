@@ -326,7 +326,7 @@ address {
   height: 310px;
 }
 
-#map {
+.map {
   width: min(50vw, 450px);
   height: 285px;
   border-radius: var(--radius-300);
@@ -471,7 +471,7 @@ address {
   .contact-views {
     width: 95vw;
   }
-  #map {
+  .map {
     width: 95vw;
   }
   #form {
@@ -490,7 +490,7 @@ address {
   .contact-views {
     height: 45dvh;
   }
-  #map {
+  .map {
     height: 45dvh;
   }
   #form {
@@ -524,7 +524,7 @@ footer .contact-form {
     height: 40dvh;
   }
 
-  #map {
+  .map {
     height: 35dvh;
   }
   #form {
