@@ -65,6 +65,14 @@ main {
   width: 100%;
 }
 
+.hero-title[animation="start"] {
+  animation: fade-in 1.5s ease-in forwards;
+}
+
+.hero-title[animation="end"] {
+  animation: fade-out 1.5s ease-out forwards;
+}
+
 .section-title {
   font-size: var(--font-700);
   font-weight: bold;
