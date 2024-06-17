@@ -506,3 +506,21 @@ async function clientFetch() {
 //   .setLngLat([35.9090783095469, 14.42816235462325])
 //   .setPopup(MarkerPopUp)
 //   .addTo(MapBoxInstance);
+
+const video = document.querySelector("video");
+const title = document.querySelector(".hero-title");
+video.addEventListener("timeupdate", () => {
+  // Check if the current time is within the last 10 seconds of the video
+  if (video.duration - video.currentTime <= 8) {
+    title.setAttribute("animation", "end");
+    title.addEventListener("animationend", () => {
+      title.style.display = "none";
+    });
+  } else {
+    title.removeAttribute("animation");
+    if (video.currentTime <= 0.5) {
+      title.style.display = "block";
+      title.setAttribute("animation", "start");
+    }
+  }
+});
