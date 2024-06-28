@@ -1,25 +1,6 @@
 "use strict";
 
-import {
-  fetchJsonData,
-  sleep,
-  setDay,
-  redirect,
-  setTheme,
-} from "./functions.js";
-
-const lightThemeColors = {
-  "--background-color": "#fcf6db",
-  "--theme-shadow": "#b9b5ab8a",
-  "--surface-light": "#c9c2a6",
-  "--surface-gray": "#b4b3b1",
-  "--surface-grayish": "#131212",
-  "--surface-dark": "#928c86",
-  "--primary-color-dark": "#fcf6db",
-  "--primary-color-light": "#11100e",
-  "--opacity-dark-100": "#11100ed7",
-  "--opacity-light-100": "#141212c4",
-};
+import { fetchJsonData, redirect } from "./functions.js";
 
 const darkThemeColors = {
   "--background-color": "#171311",
@@ -37,19 +18,14 @@ const darkThemeColors = {
 const platform = navigator.platform;
 let cached = false;
 const ipInfo = await fetchJsonData("https://ipinfo.io?token=3c805bf213b675");
-const userModePreference = window.matchMedia("(prefers-color-scheme: Dark)");
-const ColorSchemeMetaTag = document.querySelector("meta[name=color-scheme]");
 const today = new Date();
 const config = { rootMargin: "0px 0px 100px 0px" };
 const topObserverConfig = { rootMargin: "0px 0px 0px 0px" };
 let beforeScrollTop = 0;
-const accentColor = "#313636";
-let tileColor = "#313636";
 
 // ? * --> DOM Elements
 const header = document.querySelector("header");
 const menu = document.querySelector("#mainMenu");
-const tileColorList = document.querySelectorAll("meta[tile-control]");
 const logo = document.querySelector("#mainLogo");
 const body = document.body;
 const heroSection = document.querySelector("#heroSection");
@@ -252,23 +228,6 @@ redirectButtons.forEach((button) => {
     redirect(button.getAttribute("href"));
   });
 });
-
-// themeButton.addEventListener("pointerdown", () => {
-//   const THEME = localStorage.getItem("theme")
-//     ? localStorage.getItem("theme")
-//     : userModePreference.matches
-//     ? "dark"
-//     : "light";
-//   setTheme(
-//     THEME,
-//     themeButton,
-//     darkThemeColors,
-//     lightThemeColors,
-//     ColorSchemeMetaTag,
-//     tileColor
-//   );
-//   header.style = ` transition: all 0.75s ease-in-out;`;
-// });
 
 logo.addEventListener("pointerdown", () => redirect("./index.html"));
 
