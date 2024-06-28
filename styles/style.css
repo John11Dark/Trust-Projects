@@ -6,6 +6,21 @@
   /* * Colors  */
   --color-white: #f4f5ef;
   --color-black: #282e2e;
+
+  --primary-color-dark: #b8c0bf;
+  --primary-color-light: #11100e;
+  --opacity-dark-100: #11100ed7;
+  --opacity-dark-300: #0e0b0ae5;
+  --opacity-light-100: #141212c4;
+  --background-color: #d2dad9;
+  --background-color-50: #d2dad950;
+  --theme-shadow: #b9b5ab8a;
+  --surface-light: #818a88;
+  --surface-gray: #b4b3b1;
+  --surface-grayish: #131212;
+  --surface-dark: #928c86;
+
+  /*  */
   --primary-color: #658280;
   --primary-color-opacity-90: #65828090;
   --primary-color-opacity-80: #65828080;
@@ -16,6 +31,17 @@
   --primary-color-opacity-30: #65828030;
   --primary-color-opacity-20: #65828020;
   --primary-color-opacity-10: #65828010;
+  /*  */
+  --secondary-color: #656e6e;
+  --secondary-color-opacity-90: #656e6e90;
+  --secondary-color-opacity-80: #656e6e80;
+  --secondary-color-opacity-70: #656e6e70;
+  --secondary-color-opacity-60: #656e6e60;
+  --secondary-color-opacity-50: #656e6e50;
+  --secondary-color-opacity-40: #656e6e40;
+  --secondary-color-opacity-30: #656e6e30;
+  --secondary-color-opacity-20: #656e6e20;
+  --secondary-color-opacity-10: #656e6e10;
 
   /* * Fonts */
   /* --primary-font: "Quicksand", sans-serif;
@@ -111,61 +137,6 @@
 
 /* ? * Colors */
 
-/* * Dark Mode */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --primary-color-dark: #282e2e;
-    --primary-color-light: #b8c0bf;
-    --background-color: #313636;
-    --background-color-50: #31363650;
-    --surface-light: #818a88;
-    --surface-gray: #b4b3b1;
-    --surface-grayish: #d8d6d1;
-    --surface-dark: #928c86;
-    --theme-shadow: #b9b5ab8a;
-    --opacity-dark-100: #11100ed7;
-    --opacity-dark-300: #0e0b0ae5;
-    --opacity-light-100: #ffffff26;
-    --secondary-color: #8c9494;
-    --secondary-color-opacity-90: #8c949490;
-    --secondary-color-opacity-80: #8c949480;
-    --secondary-color-opacity-70: #8c949470;
-    --secondary-color-opacity-60: #8c949460;
-    --secondary-color-opacity-50: #8c949450;
-    --secondary-color-opacity-40: #8c949440;
-    --secondary-color-opacity-30: #8c949430;
-    --secondary-color-opacity-20: #8c949420;
-    --secondary-color-opacity-10: #8c949410;
-  }
-}
-
-/* * Light Mode */
-@media (prefers-color-scheme: light) {
-  :root {
-    --primary-color-dark: #b8c0bf;
-    --primary-color-light: #11100e;
-    --opacity-dark-100: #11100ed7;
-    --opacity-light-100: #141212c4;
-    --background-color: #d2dad9;
-    --background-color-50: #d2dad950;
-    --theme-shadow: #b9b5ab8a;
-    --surface-light: #818a88;
-    --surface-gray: #b4b3b1;
-    --surface-grayish: #131212;
-    --surface-dark: #928c86;
-    --secondary-color: #656e6e;
-    --secondary-color-opacity-90: #656e6e90;
-    --secondary-color-opacity-80: #656e6e80;
-    --secondary-color-opacity-70: #656e6e70;
-    --secondary-color-opacity-60: #656e6e60;
-    --secondary-color-opacity-50: #656e6e50;
-    --secondary-color-opacity-40: #656e6e40;
-    --secondary-color-opacity-30: #656e6e30;
-    --secondary-color-opacity-20: #656e6e20;
-    --secondary-color-opacity-10: #656e6e10;
-  }
-}
-
 /* ? * Sizes Laptops and small mentors */
 /* @media (max-width: 90em) {
   :root {
@@ -195,7 +166,7 @@
   padding: 0;
   word-wrap: break-word;
   border: unset;
-  color-scheme: dark light;
+  color-scheme: light;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeSpeed;
   accent-color: var(--primary-color);
