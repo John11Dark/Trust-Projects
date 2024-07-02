@@ -266,6 +266,54 @@ main {
   animation: fade-in 1s ease-in-out forwards;
 }
 
+._project {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-900);
+  padding: var(--spacing-500);
+}
+
+._project-typography {
+}
+._project-title {
+  text-transform: capitalize;
+  font-size: var(--font-600);
+  font-weight: 800;
+  color: var(--primary-color-light);
+}
+._project-description {
+}
+
+.slider {
+  position: relative;
+}
+
+.slider-controller:hover {
+  all: unset;
+  cursor: pointer;
+}
+.slider-controller {
+  all: unset;
+}
+._project-images {
+  width: 500px;
+  height: 400px;
+  overflow: hidden;
+  display: flex;
+  gap: var(--spacing-300);
+  border-radius: var(--radius-300);
+}
+
+._project-image {
+  width: 500px;
+  height: 400px;
+  object-fit: cover;
+  aspect-ratio: 16/9;
+  border-radius: var(--radius-300);
+  display: block;
+}
+
 /* ? <-*-> Footer <-*-> */
 footer.main-footer {
   height: 40vh;
