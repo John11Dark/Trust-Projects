@@ -171,7 +171,6 @@
   text-rendering: optimizeSpeed;
   accent-color: var(--primary-color);
   scroll-behavior: smooth;
-  transition: color 0.7s ease-in-out, background-color 2s ease-in-out;
 }
 
 /* ? Set core root defaults */
@@ -501,6 +500,10 @@ keyword[attr="emoji"] {
   display: flex;
   align-items: center;
   align-content: center;
+}
+
+.reverse {
+  flex-direction: row-reverse;
 }
 
 .contents {
