@@ -483,3 +483,48 @@ video.addEventListener("timeupdate", () => {
     }
   }
 });
+
+const sliderLeftController = document.querySelector("#slide-left");
+const sliderRightController = document.querySelector("#slide-right");
+const slider = document.querySelector("#slider");
+const sliderItems = document.querySelectorAll(".slider-item");
+
+let currentSlide = 0;
+let nextSlide = 1;
+let previousSlide = sliderItems.length - 1;
+
+sliderLeftController.addEventListener("pointerdown", () => {
+  if (currentSlide === 0) {
+    currentSlide = sliderItems.length - 1;
+    nextSlide = 0;
+    previousSlide = sliderItems.length - 2;
+  } else {
+    currentSlide--;
+    nextSlide = currentSlide + 1;
+    previousSlide = currentSlide - 1;
+  }
+  sliderItems.forEach((slide) => {
+    slide.setAttribute("active", false);
+  });
+  sliderItems[currentSlide].setAttribute("active", true);
+  sliderItems[nextSlide].setAttribute("next", true);
+  sliderItems[previousSlide].setAttribute("previous", true);
+});
+
+sliderRightController.addEventListener("pointerdown", () => {
+  if (currentSlide === sliderItems.length - 1) {
+    currentSlide = 0;
+    nextSlide = 1;
+    previousSlide = sliderItems.length - 1;
+  } else {
+    currentSlide++;
+    nextSlide = currentSlide + 1;
+    previousSlide = currentSlide - 1;
+  }
+  sliderItems.forEach((slide) => {
+    slide.setAttribute("active", false);
+  });
+  sliderItems[currentSlide].setAttribute("active", true);
+  sliderItems[nextSlide].setAttribute("next", true);
+  sliderItems[previousSlide].setAttribute("previous", true);
+});
