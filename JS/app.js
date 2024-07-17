@@ -10,7 +10,7 @@ const keys = {
   ck: "AMD5S_SJDEF-45DSF",
   cv: "fc2AM-GB-78f2b5",
 };
-const URL_STRING = "http://172.16.0.14:8000";
+const URL_STRING = "https://trust-projects-server.onrender.com/";
 const KEY = "Um6NSSwMAVWXG7-eRF1BdNr3S55wCYC-Uv55SShz8tK1UW";
 
 // ? * --> Variables
