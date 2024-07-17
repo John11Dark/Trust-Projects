@@ -1,5 +1,5 @@
 "use strict";
-import { fetchJsonData, redirect } from "./functions.js";
+import { redirect } from "./functions.js";
 
 const keys = {
   ak: "s564k-s128e-ey78a",
@@ -10,7 +10,7 @@ const keys = {
   ck: "AMD5S_SJDEF-45DSF",
   cv: "fc2AM-GB-78f2b5",
 };
-const URL_STRING = "https://trust-projects-server.onrender.com";
+const URL_STRING = "http://172.16.0.14:8000";
 const KEY = "Um6NSSwMAVWXG7-eRF1BdNr3S55wCYC-Uv55SShz8tK1UW";
 
 // ? * --> Variables
@@ -61,23 +61,6 @@ const headerObserver = new IntersectionObserver((entries) => {
   });
 }, observerConfig);
 
-// function headerObserver() {
-//   let currentScrollTop = window.scrollY || document.documentElement.scrollTop;
-//   header.setAttribute("isIntersecting", true);
-//   if (beforeScrollTop < currentScrollTop) {
-//     header.style = `opacity: 0.3; height : 2vh;`;
-//   } else {
-//     header.style = `opacity: 1; height : 10vh;`;
-//   }
-//   console.log(beforeScrollTop);
-//   console.log(currentScrollTop);
-//   beforeScrollTop = currentScrollTop;
-//   if (beforeScrollTop <= 0 && currentScrollTop <= 0) {
-//     header.setAttribute("isIntersecting", false);
-//   }
-// }
-
-// tab indicator
 const choosingUsListParent = document.querySelector(
   ".choosing-us-content-container"
 );
@@ -473,3 +456,12 @@ if (sliderRightController != null)
     sliderItems[nextSlide].setAttribute("next", true);
     sliderItems[previousSlide].setAttribute("previous", true);
   });
+
+fetch(`${URL_STRING}/`, {
+  method: "GET",
+  headers: {
+    "Content-Type": "application/json",
+    tspdk: KEY,
+    public: "true",
+  },
+});
