@@ -1,27 +1,20 @@
 "use strict";
-
 import { fetchJsonData, redirect } from "./functions.js";
 
-const darkThemeColors = {
-  "--background-color": "#171311",
-  "--theme-shadow": "#b9b5ab8a",
-  "--surface-light": "#e5dfc6",
-  "--surface-gray": "#b4b3b1",
-  "--surface-grayish": "#d8d6d1",
-  "--surface-dark": "#928c86",
-  "--primary-color-dark": "#11100e",
-  "--primary-color-light": "#fcf6db",
-  "--opacity-dark-100": "#11100ed7",
-  "--opacity-light-100": "#ffffff26",
+const keys = {
+  ak: "s564k-s128e-ey78a",
+  av: "49128f-AM73-8cd1",
+  bk: "a787m-h778e-key45df",
+  bv: "b17d278c-cd1Ce-4602",
+  nk: "DFS5S_S5JEF-445EG",
+  ck: "AMD5S_SJDEF-45DSF",
+  cv: "fc2AM-GB-78f2b5",
 };
+const URL_STRING = "https://trust-projects-server.onrender.com";
+const KEY = "Um6NSSwMAVWXG7-eRF1BdNr3S55wCYC-Uv55SShz8tK1UW";
+
 // ? * --> Variables
-const platform = navigator.platform;
-let cached = false;
-const ipInfo = await fetchJsonData("https://ipinfo.io?token=3c805bf213b675");
-const today = new Date();
 const config = { rootMargin: "0px 0px 100px 0px" };
-const topObserverConfig = { rootMargin: "0px 0px 0px 0px" };
-let beforeScrollTop = 0;
 
 // ? * --> DOM Elements
 const header = document.querySelector("header");
@@ -325,62 +318,75 @@ contactButton?.addEventListener("pointerdown", () => {
   contactForm.setAttribute("aria-hidden", false);
 });
 
-contactForm?.addEventListener("submit", async (e) => {
-  e.preventDefault();
-  const formData = new FormData(contactForm);
-  const data = validateForm(formData);
-  if (!data) alert("Please fill in all fields");
-  else {
-    // reset form
-    contactForm.reset();
-    if (inputFields) {
-      inputFields.forEach((inputField) => {
-        inputField.setAttribute("hasContent", false);
-      });
-    }
-
-    if (messageInputField) messageInputField.setAttribute("hasContent", false);
+function setPhoneNumber(value) {
+  const regex = /^\+\d{1,3} \d{8,10}$/;
+  if (regex.test(value)) {
+    return {
+      code: value.split(" ")[0],
+      number: value.split(" ")[1],
+    };
   }
-  // const response = await fetch("https://formspree.io/f/mnqoqzqz", {
-  //   method: "POST",
-  //   headers: {
-  //     "Content-Type": "application/json",
-  //   },
-  //   body: JSON.stringify(data),
-  // });
-
-  // if (response.ok) {
-  //   contactForm.reset();
-  //   alert("Message sent successfully");
-  // } else {
-  //   alert("Message not sent, please try again");
-  // }
-});
-
-async function validateForm(formData) {
-  const data = Object.fromEntries(formData);
-  const { name, email, number, message } = data;
-  console.log(data);
-  if (name.length <= 0) {
-    alert("Please enter your name");
-    return null;
-  }
-  if (email.length <= 0) {
-    alert("Please enter your email");
-    return null;
-  }
-  if (message.length <= 0) {
-    alert("Please enter your message");
-    return null;
-  }
-  const newNumber = data.number.replace("+", "");
-  if (number.length <= 0 || isNaN(newNumber)) {
-    alert("Please enter your number");
-    return null;
-  }
-
-  return data;
+  return {
+    code: "",
+    number: "",
+  };
 }
+
+async function validateForm(fields) {
+  let isValid = true;
+  let data = {};
+  fields.forEach((field) => {
+    if (field.value.length <= 0) {
+      field.setAttribute("error", true);
+      isValid = false;
+    } else {
+      field.removeAttribute("error");
+
+      data[field.id] = field.value;
+    }
+  });
+  return { isValid, data };
+}
+
+if (contactForm)
+  contactForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const emailField = document.querySelector("#email");
+    const nameField = document.querySelector("#name");
+    const numberField = document.querySelector("#number");
+    const messageField = document.querySelector("#message");
+
+    const { isValid, data } = await validateForm([
+      emailField,
+      nameField,
+      messageField,
+    ]);
+
+    const phone = setPhoneNumber(numberField.value);
+    const input = {
+      ...data,
+      phone,
+    };
+    if (isValid) {
+      const response = await fetch(`${URL_STRING}/messages`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          tspdk: KEY,
+          public: "true",
+        },
+        body: JSON.stringify(input),
+      });
+
+      if (response.ok) {
+        contactForm.reset();
+        alert("Message sent successfully");
+      } else {
+        alert("Message not sent, please try again");
+      }
+    }
+  });
 
 const numericInputs = document.querySelectorAll("[inputmode='numeric']");
 
@@ -402,69 +408,6 @@ function validateInput(el) {
     );
   });
 }
-
-const keys = {
-  ak: "s564k-s128e-ey78a",
-  av: "49128f-AM73-8cd1",
-  bk: "a787m-h778e-key45df",
-  bv: "b17d278c-cd1Ce-4602",
-  nk: "DFS5S_S5JEF-445EG",
-  ck: "AMD5S_SJDEF-45DSF",
-  cv: "fc2AM-GB-78f2b5",
-};
-
-const IN_LOCAL_IP_ADDRESS = "172.16.0.14";
-// const OUT_LOCAL_IP_ADDRESS = "192.168.1.104";
-const IP_ADDRESS = IN_LOCAL_IP_ADDRESS;
-
-const PORT = "8000";
-
-async function clientFetch() {
-  try {
-    const response = await fetch(`http://172.16.0.14:8000/test`, {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      credentials: "include",
-      mode: "cors",
-      cache: "no-cache",
-    });
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
-    }
-    const data = await response.json();
-    return data;
-  } catch (error) {
-    console.error("Fetch error:", error);
-    return null;
-  }
-}
-
-// const data = await clientFetch();
-// console.log("data", data);
-
-// mapboxgl.accessToken ="";
-// const MapBoxInstance = new mapboxgl.Map({
-//   container: "map",
-//   // Choose from Mapbox's core styles, or make your own style with Mapbox Studio
-//   style: "mapbox://styles/mapbox/dark-v11",
-//   center: [35.92435628878943, 14.395761987151309],
-//   zoom: 10,
-//   pitch: 45,
-//   bearing: -17.6,
-//   accentColor: accentColor,
-// });
-
-// const MarkerPopUp = new mapboxgl.Popup({ offset: 25 }).setText(
-//   "Trust Projects"
-// );
-
-// // Create a default Marker and add it to the map.
-// const TrustProjectsMarker = new mapboxgl.Marker()
-//   .setLngLat([35.9090783095469, 14.42816235462325])
-//   .setPopup(MarkerPopUp)
-//   .addTo(MapBoxInstance);
 
 const video = document.querySelector("video");
 const title = document.querySelector(".hero-title");
@@ -493,38 +436,40 @@ let currentSlide = 0;
 let nextSlide = 1;
 let previousSlide = sliderItems.length - 1;
 
-sliderLeftController.addEventListener("pointerdown", () => {
-  if (currentSlide === 0) {
-    currentSlide = sliderItems.length - 1;
-    nextSlide = 0;
-    previousSlide = sliderItems.length - 2;
-  } else {
-    currentSlide--;
-    nextSlide = currentSlide + 1;
-    previousSlide = currentSlide - 1;
-  }
-  sliderItems.forEach((slide) => {
-    slide.setAttribute("active", false);
+if (sliderLeftController != null)
+  sliderLeftController.addEventListener("pointerdown", () => {
+    if (currentSlide === 0) {
+      currentSlide = sliderItems.length - 1;
+      nextSlide = 0;
+      previousSlide = sliderItems.length - 2;
+    } else {
+      currentSlide--;
+      nextSlide = currentSlide + 1;
+      previousSlide = currentSlide - 1;
+    }
+    sliderItems.forEach((slide) => {
+      slide.setAttribute("active", false);
+    });
+    sliderItems[currentSlide].setAttribute("active", true);
+    sliderItems[nextSlide].setAttribute("next", true);
+    sliderItems[previousSlide].setAttribute("previous", true);
   });
-  sliderItems[currentSlide].setAttribute("active", true);
-  sliderItems[nextSlide].setAttribute("next", true);
-  sliderItems[previousSlide].setAttribute("previous", true);
-});
 
-sliderRightController.addEventListener("pointerdown", () => {
-  if (currentSlide === sliderItems.length - 1) {
-    currentSlide = 0;
-    nextSlide = 1;
-    previousSlide = sliderItems.length - 1;
-  } else {
-    currentSlide++;
-    nextSlide = currentSlide + 1;
-    previousSlide = currentSlide - 1;
-  }
-  sliderItems.forEach((slide) => {
-    slide.setAttribute("active", false);
+if (sliderRightController != null)
+  sliderRightController?.addEventListener("pointerdown", () => {
+    if (currentSlide === sliderItems.length - 1) {
+      currentSlide = 0;
+      nextSlide = 1;
+      previousSlide = sliderItems.length - 1;
+    } else {
+      currentSlide++;
+      nextSlide = currentSlide + 1;
+      previousSlide = currentSlide - 1;
+    }
+    sliderItems.forEach((slide) => {
+      slide.setAttribute("active", false);
+    });
+    sliderItems[currentSlide].setAttribute("active", true);
+    sliderItems[nextSlide].setAttribute("next", true);
+    sliderItems[previousSlide].setAttribute("previous", true);
   });
-  sliderItems[currentSlide].setAttribute("active", true);
-  sliderItems[nextSlide].setAttribute("next", true);
-  sliderItems[previousSlide].setAttribute("previous", true);
-});
