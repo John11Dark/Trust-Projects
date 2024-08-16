@@ -1,3 +1,6 @@
+// export const URL_STRING = "https://trust-projects-server.onrender.com";
+export const URL_STRING = "http://172.16.0.14:8000";
+export const KEY = "Um6NSSwMAVWXG7-eRF1BdNr3S55wCYC-Uv55SShz8tK1UW";
 export function sleep(duration) {
   return new Promise((resolve) => {
     setTimeout(resolve, duration);
