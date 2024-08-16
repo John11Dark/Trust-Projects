@@ -268,13 +268,15 @@ main {
 
 ._project {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   gap: var(--spacing-900);
-  padding: var(--spacing-500);
+  padding: var(--spacing-900);
 }
 
 ._project-typography {
+  max-width: 600px;
+  min-width: 500px;
 }
 ._project-title {
   text-transform: capitalize;
@@ -297,17 +299,18 @@ main {
   all: unset;
 }
 ._project-images {
-  width: 500px;
-  height: 400px;
+  width: 100%;
+  height: 500px;
   overflow: hidden;
   display: flex;
   gap: var(--spacing-300);
   border-radius: var(--radius-300);
+  aspect-ratio: 16/9;
 }
 
 ._project-image {
-  width: 500px;
-  height: 400px;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
   aspect-ratio: 16/9;
   border-radius: var(--radius-300);

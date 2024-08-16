@@ -220,52 +220,7 @@
 
       <section class="_projects | spacing-500" data-projects>
 
-        <article class="_project" data-project="proj-1">
-          <div class="_project-typography">
-            <h2 class="_project-title">holiday Inn Express </h2>
-            <p class="_project-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec
-              fringilla
-              nunc. Nullam
-            </p>
-            <button class="_project-button | pressable | outline | margin-block-300" aria-label="View project"
-              title="View project" data-project="proj-1">View
-              Project</button>
-          </div>
-          <div class="slider-wrapper">
-            <!-- <button class="slider-controller" aria-controls="Carousel-List" id="slide-left" title="Slide left"
-              type="button"> <- </button> -->
-            <div id="Carousel-List" class="_project-images | slider" id="slider">
-              <img class="_project-image | slider-item"
-                src="../assets/projects/Project 1/PHOTO-2024-06-29-14-52-23 2.jpg" alt="intercontinental hotel malta">
-            </div>
-            <!-- <button class="slider-controller" aria-controls="Carousel-List" id="slide-right" title="Slide right"
-                  type="button"> -> </button> -->
-          </div>
-        </article>
 
-
-        <article class="_project | reverse" data-project="proj-2">
-          <div class="_project-typography">
-            <h2 class="_project-title">intercontinental hotel malta</h2>
-            <p class="_project-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec
-              fringilla
-              nunc. Nullam
-            </p>
-            <button class="_project-button | pressable | outline | margin-block-300" aria-label="View project"
-              title="View project" data-project="proj-2">View
-              Project</button>
-          </div>
-          <div class="slider-wrapper">
-            <!-- <button class="slider-controller" aria-controls="Carousel-List" id="slide-left" title="Slide left"
-              type="button"> <- </button> -->
-            <div id="Carousel-List" class="_project-images | slider" id="slider">
-              <img class="_project-image | slider-item"
-                src="../assets/projects/Project 2/PHOTO-2024-07-01-14-51-04 4.jpg" alt="intercontinental hotel malta">
-            </div>
-            <!-- <button class="slider-controller" aria-controls="Carousel-List" id="slide-right" title="Slide right"
-                  type="button"> -> </button> -->
-          </div>
-        </article>
       </section>
 
     </main>
@@ -325,8 +280,8 @@
                 <div class="field-container">
                   <label for="number" class="field-label">Number</label>
                   <input type="tel" id="number" class="input-field" required aria-label="Your Number"
-                    aria-required="true" autocomplete="tel" pattern="^\+(?:[0-9] ?){6,14}[0-9]$" minlength="8"
-                    maxlength="15" />
+                    aria-required="true" autocomplete="tel" minlength="13" maxlength="13"
+                    pattern="^\+\d{1,3} \d{8,10}$" />
                 </div>
               </div>
 
@@ -339,8 +294,8 @@
 
               <div class="field-container | message">
                 <label for="message" class="field-label">Message</label>
-                <textarea id="message" class="input-field | message-field" required aria-label="Your Message"
-                  aria-required="true"></textarea>
+                <textarea id="message" class="input-field | message-field" minlength="10" required
+                  aria-label="Your Message" aria-required="true"></textarea>
               </div>
               <button type="submit" title="Send message" aria-label="Send message"
                 class="pressable | send-button | absolute">

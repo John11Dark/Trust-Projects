@@ -123,12 +123,6 @@
   --box-shadow-600: 0 0 5em 1em var(--DarkModeOpacity);
   --shadow-accent-glow: 0 0 1em -0.5em var(--primary-color);
 
-  /* ? Transitions   */
-
-  --transition-300: all 0.5s ease;
-  --transition-5ms-Ease: all 0.5s ease;
-  --transition-backgroundColor-Ease: background-color 0.5s ease;
-
   /* ? Layers */
   --higher-layer: 100;
   --above-layer: 90;
@@ -195,7 +189,6 @@ body {
   font-size: var(--font-200);
   font-family: var(--primary-font);
   font-weight: 500;
-  /* transition: all 0.2s ease; */
 }
 
 /* When another element is observing disable scrolling */
@@ -926,7 +919,7 @@ keyword[attr="emoji"] {
 .clickable {
   pointer-events: all;
   cursor: pointer;
-  transition: var(--transition-5ms-Ease);
+  transition: all 0.5s ease;
 }
 
 .svg-icon {
@@ -1007,7 +1000,7 @@ header {
   animation-timeline: view();
   animation-range-start: 200vh;
   animation-range-end: 220vh; */
-  transition: all 0.5s ease;
+  /* transition: all 0.5s ease; */
 }
 
 header[isInteracting="true"] {
@@ -1053,7 +1046,6 @@ header[isInteracting="true"] {
   transform: scale(0.9);
   color: #fff;
   font-weight: 800;
-  transition: var(--transition-300);
   transform-origin: center;
   text-shadow: var(--shadow-accent-text);
 }
@@ -1138,7 +1130,7 @@ main {
   }
 
   .hamburger .line {
-    transition: all 1s ease;
+    /* transition: all 1s ease; */
     stroke: var(--primary-color);
     fill: none;
   }
