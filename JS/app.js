@@ -1,17 +1,5 @@
 "use strict";
-import { redirect } from "./functions.js";
-
-const keys = {
-  ak: "s564k-s128e-ey78a",
-  av: "49128f-AM73-8cd1",
-  bk: "a787m-h778e-key45df",
-  bv: "b17d278c-cd1Ce-4602",
-  nk: "DFS5S_S5JEF-445EG",
-  ck: "AMD5S_SJDEF-45DSF",
-  cv: "fc2AM-GB-78f2b5",
-};
-const URL_STRING = "https://trust-projects-server.onrender.com/";
-const KEY = "Um6NSSwMAVWXG7-eRF1BdNr3S55wCYC-Uv55SShz8tK1UW";
+import { redirect, URL_STRING, KEY } from "./functions.js";
 
 // ? * --> Variables
 const config = { rootMargin: "0px 0px 100px 0px" };
@@ -302,7 +290,9 @@ contactButton?.addEventListener("pointerdown", () => {
 });
 
 function setPhoneNumber(value) {
-  const regex = /^\+\d{1,3} \d{8,10}$/;
+  value = value.replace("+", "");
+  console.log(value);
+  const regex = /^\d{1,3} \d{8,10}$/;
   if (regex.test(value)) {
     return {
       code: value.split(" ")[0],
@@ -456,6 +446,129 @@ if (sliderRightController != null)
     sliderItems[nextSlide].setAttribute("next", true);
     sliderItems[previousSlide].setAttribute("previous", true);
   });
+
+const projects = await fetch(`${URL_STRING}/projects`, {
+  method: "GET",
+  headers: {
+    "Content-Type": "application/json",
+    tspdk: KEY,
+    public: "true",
+  },
+});
+
+const projectsData = await projects.json();
+console.log(projectsData);
+const projectsContainer = document.querySelector("[data-projects]");
+/*
+<article class="_project" data-project="proj-1">
+          <div class="_project-typography">
+            <h2 class="_project-title">holiday Inn Express </h2>
+            <p class="_project-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec
+              fringilla
+              nunc. Nullam
+            </p>
+            <button class="_project-button | pressable | outline | margin-block-300" aria-label="View project"
+              title="View project" data-project="proj-1">View
+              Project</button>
+          </div>
+          <div class="slider-wrapper">
+            <!-- <button class="slider-controller" aria-controls="Carousel-List" id="slide-left" title="Slide left"
+              type="button"> <- </button> -->
+            <div id="Carousel-List" class="_project-images | slider" id="slider">
+              <img class="_project-image | slider-item"
+                src="../assets/projects/Project 1/PHOTO-2024-06-29-14-52-23 2.jpg" alt="intercontinental hotel malta">
+            </div>
+            <!-- <button class="slider-controller" aria-controls="Carousel-List" id="slide-right" title="Slide right"
+                  type="button"> -> </button> -->
+          </div>
+        </article>
+
+
+        <article class="_project | reverse" data-project="proj-2">
+          <div class="_project-typography">
+            <h2 class="_project-title">intercontinental hotel malta</h2>
+            <p class="_project-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec
+              fringilla
+              nunc. Nullam
+            </p>
+            <button class="_project-button | pressable | outline | margin-block-300" aria-label="View project"
+              title="View project" data-project="proj-2">View
+              Project</button>
+          </div>
+          <div class="slider-wrapper">
+            <!-- <button class="slider-controller" aria-controls="Carousel-List" id="slide-left" title="Slide left"
+              type="button"> <- </button> -->
+            <div id="Carousel-List" class="_project-images | slider" id="slider">
+              <img class="_project-image | slider-item"
+                src="../assets/projects/Project 2/PHOTO-2024-07-01-14-51-04 4.jpg" alt="intercontinental hotel malta">
+            </div>
+            <!-- <button class="slider-controller" aria-controls="Carousel-List" id="slide-right" title="Slide right"
+                  type="button"> -> </button> -->
+          </div>
+        </article>
+         */
+
+if (projectsContainer != null) {
+  if (projectsData.length === 0) {
+    const message = document.createElement("h2");
+    message.textContent = "No projects available";
+    projectsContainer.appendChild(message);
+  }
+
+  projectsData.forEach((project, index) => {
+    const article = document.createElement("article");
+    article.classList.add("_project");
+    article.classList.add(index % 2 === 0 ? "reverse" : "aa");
+    article.setAttribute("data-project", project._id);
+
+    const typography = document.createElement("div");
+    typography.classList.add("_project-typography");
+
+    const title = document.createElement("h2");
+    title.classList.add("_project-title");
+    title.textContent = project.name;
+
+    const description = document.createElement("p");
+    description.classList.add("_project-description");
+    description.textContent = project.description;
+
+    const button = document.createElement("button");
+    button.classList.add(
+      "_project-button",
+      "pressable",
+      "outline",
+      "margin-block-300"
+    );
+    button.setAttribute("aria-label", "View project");
+    button.setAttribute("title", "View project");
+    button.setAttribute("data-project", project._id);
+    button.textContent = "View Project";
+
+    typography.appendChild(title);
+    typography.appendChild(description);
+    typography.appendChild(button);
+
+    article.appendChild(typography);
+
+    const sliderWrapper = document.createElement("div");
+    sliderWrapper.classList.add("slider-wrapper");
+
+    const slider = document.createElement("div");
+    slider.classList.add("_project-images", "slider");
+    slider.setAttribute("id", "slider");
+
+    const image = document.createElement("img");
+    image.classList.add("_project-image", "slider-item");
+    image.setAttribute("src", project.files[0].secure_url);
+    image.setAttribute("alt", project.name);
+
+    slider.appendChild(image);
+    sliderWrapper.appendChild(slider);
+    article.appendChild(sliderWrapper);
+
+    projectsContainer.appendChild(article);
+  });
+}
 
 fetch(`${URL_STRING}/`, {
   method: "GET",
