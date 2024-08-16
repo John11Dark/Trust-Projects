@@ -298,8 +298,8 @@
                 <div class="field-container">
                   <label for="number" class="field-label">Number</label>
                   <input type="tel" id="number" class="input-field" required aria-label="Your Number"
-                    aria-required="true" autocomplete="tel" pattern="^\+(?:[0-9] ?){6,14}[0-9]$" minlength="8"
-                    maxlength="15" />
+                    aria-required="true" autocomplete="tel" minlength="13" maxlength="13"
+                    pattern="^\+\d{1,3} \d{8,10}$" />
                 </div>
               </div>
 
@@ -312,8 +312,8 @@
 
               <div class="field-container | message">
                 <label for="message" class="field-label">Message</label>
-                <textarea id="message" class="input-field | message-field" required aria-label="Your Message"
-                  aria-required="true"></textarea>
+                <textarea id="message" class="input-field | message-field" minlength="10" required
+                  aria-label="Your Message" aria-required="true"></textarea>
               </div>
               <button type="submit" title="Send message" aria-label="Send message"
                 class="pressable | send-button | absolute">
